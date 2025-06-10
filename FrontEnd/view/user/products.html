@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/user/header.css">
+    <link rel="stylesheet" href="../../css/user/footer.css">
+    <link rel="stylesheet" href="../../css/user/category.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>3TSHOP-Home</title>
+    <style>
+        .loading-spinner {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        .category-product-container {
+            position: relative;
+            min-height: 200px; /* Ensure space for spinner */
+        }
+        .category-product-list {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        .category-product-list.loading {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="slider"></div>
+        <div class="carousel-container"></div>  
+        <div class="category-product">
+            <div class="title">
+                <h4 class="title-name">SẢN PHẨM ÁO THUN</h4>
+            </div>
+            <div class="category-product-container">
+                <div class="filter">
+                    <div class="filter-tool">
+                        <span class="material-symbols-outlined">filter_alt</span>
+                        <select name="price-filter" id="price-filter">
+                            <option value="">Chọn giá</option>
+                            <option value="under-150">Dưới 150.000đ</option>
+                            <option value="150-200">Từ 150.000đ đến 200.000đ</option>
+                            <option value="200-500">Từ 200.000đ đến 500.000đ</option>
+                            <option value="above-500">Trên 500.000đ</option>
+                        </select>
+                        <select name="size-filter" id="size-filter">
+                            <option value="">Chọn kích thước</option>
+                            <option value="M">Size M</option>
+                            <option value="L">Size L</option>
+                            <option value="XL">Size XL</option>
+                            <option value="2XL">Size 2XL</option>
+                        </select>
+                    </div>
+                    <div class="sort-tool">
+                        <span class="material-symbols-outlined">filter_list</span>
+                        <select name="sort" id="sort">
+                            <option value="popular">Nổi bật</option>
+                            <option value="price-asc">Giá thấp tới cao</option>
+                            <option value="price-desc">Giá cao tới thấp</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="loading-spinner" id="loading-spinner"></div>
+                <div class="category-product-list"></div>
+            </div>  
+        </div>
+        <div style="display: none;" id="feedback">
+            <p>Đánh giá kết quả tìm kiếm</p>
+            <button class="feedback-button" id="feedback-ok">Tốt</button>
+            <button class="feedback-button" id="feedback-bad">Kém</button>
+        </div>  
+    </div>
+    <script type="module" src="../../js/user/page/category.js"></script>
+</body>
+</html><!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/user/header.css">
+    <link rel="stylesheet" href="../../css/user/footer.css">
+    <link rel="stylesheet" href="../../css/user/category.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>3TSHOP-Home</title>
+</head>
+<body>
+    <div class="container">
+        <div class="slider">
+            
+        </div>
+        <div class="carousel-container">
+            
+        </div>  
+        <div class="category-product">
+            <div class="title">
+                <h4 class="title-name">SẢN PHẨM ÁO THUN</h4>
+            </div>
+            <div class="category-product-container">
+                <div class="filter">
+                    <div class="filter-tool">
+                        <span class="material-symbols-outlined">
+                            filter_alt
+                        </span>
+                        <select name="price-filter" id="price-filter">
+                            <option value="">Chọn giá</option>
+                            <option value="">Dưới 150.000đ</option>
+                            <option value="">Từ 150.000đ đến 200.000đ</option>
+                            <option value="">Từ 200.000đ đến 500.000đ</option>
+                        </select>
+                        <select name="size-filter" id="size-filter">
+                            <option value="">Chọn kích thước</option>
+                            <option value="">Size M</option>
+                            <option value="">Size L</option>
+                            <option value="">Size XL</option>
+                            <option value="">Size 2XL</option>
+                        </select>
+                    </div>
+                    <div class="sort-tool">
+                        <span class="material-symbols-outlined">
+                            filter_list
+                        </span>
+                        <select name="sort" id="sort">
+                            <option value="">Nổi bật</option>
+                            <option value="">Giá thấp tới cao</option>
+                            <option value="">Giá cao tới thấp</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="category-product-list">
+                    
+                </div>
+            </div>  
+        </div>
+        <div style="display: none;" id="feedback">
+            <p>Đánh giá kết quả tìm kiếm</p>
+            <button class="feedback-button" id="feedback-ok">Tốt</button>
+            <button class="feedback-button" id="feedback-bad">Kém</button>
+        </div>  
+    </div>
+    <script type="module" src="../../js/user/page/category.js"></script>
+</body>
+</html> -->

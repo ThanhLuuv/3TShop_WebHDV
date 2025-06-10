@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/user/header.css">
+    <link rel="stylesheet" href="../../css/user/footer.css">
+    <link rel="stylesheet" href="../../css/user/pay-page.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Giga:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>3TSHOP-Home</title>
+</head>
+<body>
+    <div class="pay-container">
+        <div class="header-bg">
+            <img src="../../img/utils/pay-bg.png" alt="">
+            <h4 class="heading">THANH TOÁN ĐƠN HÀNG</h4>
+        </div>
+        <div class="pay-content">
+            <div class="pay-item-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Tạm tính</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="infor-container">
+                <div class="title">
+                    <h4>THÔNG TIN NHẬN HÀNG</h4>
+                    <div class="form address-container">
+                        <div>
+                            <div class="address-content">
+                                <!-- <div>
+                                    <p id="name" class="default-name">TRẦN THỊ DIỄM HÀ PHƯƠNG</p>
+                                    <p id="phone" class="default-phone-number">0987654321</p>
+                                </div>
+                                <p id="address" class="address-detail">41/15, đường số 11, phường Trường Thọ, Tp. Thủ Đức, Tp. HCM</p> -->
+                            </div>
+                            <div class="btn-change-address"><button >Đổi địa chỉ</button></div>
+                        </div>
+                        <div class="textarea-container">
+                            <label for="">Ghi chú đơn hàng</label>
+                            <textarea name="" id="orderNote"></textarea>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="group-content">
+                            <label for="">Tạm tính</label>
+                            <p class="provisional-total">120.000đ</p>
+                        </div>
+                        <div class="group-content">
+                            <label for="">Phí giao hàng</label>
+                            <p>30.000đ</p>
+                        </div>
+                        <div class="group-content total-group">
+                            <label class="label-total" for="">Tổng</label>
+                            <p class="final-total">150.000đ</p>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="group-action">
+                            <label for="">Phương thức thanh toán</label>
+                            <p>Thanh toán khi nhận hàng</p>
+                        </div>
+                        <p class="message">Vui lòng kiểm tra kĩ thông tin đơn hàng trước nhấn đặt hàng</p>
+                        <button class="pay-btn">Đặt hàng</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div id="modal-container">
+            <div class="modal-body">
+                <span class=" close material-symbols-outlined">
+                    close
+                </span>
+                <div class="title">
+                    <h4>THAY ĐỔI ĐỊA CHỈ GIAO HÀNG</h4>
+                    <p>Vui lòng chọn địa chỉ giao hàng</p>
+                </div>
+                <div class="form-content">
+                    <div class="img-div">
+                        <img src="../../img/utils/ship-icon.png" alt="">
+                    </div>
+                    <div class="content">
+                        
+                    </div> 
+                </div>
+                <p>Thêm địa chỉ mới ở trang <a href="/personal-infor">Thông tin của bạn</a></p>
+                <div class="btn-container">
+                    <button class="cancel">Hủy</button>
+                    <button class="submit">Thay đổi</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../../js/user/page/pay-page.js"></script>
+</body>
+</html>

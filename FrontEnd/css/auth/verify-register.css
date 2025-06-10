@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Exa';
+    font-weight: 400;
+    color: #222831;
+    font-size: 12px;
+    user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none; 
+}
+.wrapper{
+    background-image: url(../../img/auth/background_login.jpg);
+    background-size: cover; /* Phủ kín toàn bộ nền */
+    background-position: center; /* Căn giữa ảnh nền */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+    height: 100vh; /* Chiều cao toàn màn hình */
+    display: flex;
+    align-items:center;
+    justify-content:end
+}
+.content{
+    width: 36%;
+    background-color: #FFFFFF;
+    height: inherit;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+.logo_img{
+    height: 150px;
+    width: 150px;
+    margin-top: 120px;
+    margin-bottom: 32px;
+}
+.wellcome__title{
+    font-size: 32px;
+    font-weight: 700;
+}
+.login__form{
+    width: 70%;
+    margin-top: 20px;
+}
+
+.action_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.noti__box{
+    color: green;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.a__back__login{
+    display: block;
+    color: #825B32;
+    font-weight: 600;
+    cursor: pointer;
+}
+.a__back__login:hover{
+text-decoration: underline;
+}

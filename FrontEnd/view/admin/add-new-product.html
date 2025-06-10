@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/admin/add-new-product.css">
+    <link rel="stylesheet" href="../../css/admin/toast.css">
+    <link rel="stylesheet" href="../../css/admin/modal.css">
+    <link rel="stylesheet" href="../../css/admin/spinner.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>THÊM SẢN PHẨM MỚI</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="toast-container" class="toast-container">
+        </div>
+        <div class="body__wrapper">
+            <!-- Nut quay ve trang quan ly san pham -->
+            <div class="button__back__wrapper">
+                <button type="button" id="button__back">
+                    <span class="material-symbols-outlined">
+                        arrow_back
+                        </span>
+                </button>
+            </div>
+    
+            <div class="title__wrapper">
+                <h2 id="title">THÊM SẢN PHẨM MỚI</h2>
+            </div>
+
+            <div class="subtitle__wrapper">
+                <h2 class="general__information">Các thông tin chung về sản phẩm</h2>
+            </div>
+
+            <div class="top__fields">
+                <div class="left__top__fields">
+                    <!-- Chọn danh mục -->
+                    <div class="select__category__wrapper">
+                        <span>Chọn danh mục</span>
+                        <select id="category__combobox">
+                            <option value="">Áo thun</option>
+                            <option value="">Áo sơ mi</option>
+                        </select>
+                    </div>
+
+                    <!-- Tên sản phẩm -->
+                    <div class="name__and__price__wrapper">
+                        <div class="product__name__wrapper">
+                            <label for="input__product__name">Tên sản phẩm</label>
+                            <input type="text" id="input__product__name">
+                            <h3 class="validate__input" id="validate__product__name">Vui lòng nhập tên sản phẩm</h3>
+                        </div>
+                        <div class="product__price__wrapper">
+                            <label for="input__product__name">Giá sản phẩm</label>
+                            <input type="number" id="input__product__price">
+                            <h3 class="validate__input" id="validate__product__price">Vui lòng nhập giá sản phẩm</h3>
+                        </div>
+                    </div>
+
+                    <div class="product__for">
+                        <span>Sản phẩm dành cho</span>
+                        <select id="product__type__combobox">
+                            <option value="true" selected>Nam</option>
+                            <option value="false">Nữ</option>
+                            <!-- <option value="unisex">Unisex</option> -->
+                        </select>
+                    </div>
+
+                    <div class="product__description__wrapper">
+                        <label for="product__description__input" id="product__description__label">Mô tả sản phẩm</label>
+                        <textarea id="product__description__input" name="product__description"></textarea>
+                        <h3 class="validate__input" id="validate__product__description">Vui lòng nhập mô tả sản phẩm</h3>
+                    </div>
+
+                </div>
+
+                <div class="right__top__fields">
+                    <div class="product__image__wrapper">
+                        <img src="../../img/utils/image.png" alt="NO IMAGE" class="product__image" id="place__holder__image">
+                    </div>
+                    <div class="upload__proudct__image__wrapper">
+                        <h3 class="validate__input" id="validate__product__image">Vui lòng nhập hình ảnh sản phẩm</h3>
+                        <h3 id="notice">*Hình ảnh đầu tiên sẽ được chọn làm ảnh đại diện cho sản phẩm</h3>   
+                        <div class="handle__image__wrapper">
+                            <label for="upload__product__image__input" id="upload__product__image__label">
+                                <span class="material-symbols-outlined" id="icon__upload__image">
+                                    add_photo_alternate
+                                    </span>
+                                <h3>Tải lên hình ảnh sản phẩm</h3>
+                            </label>
+                            <div class="delete__all__image__wrapper">
+                                <button type="button" id="detele__all__image">Xóa tất cả</button>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="file" id="upload__product__image__input" multiple accept="image/*" hidden>
+                </div>
+            </div>
+
+            <div class="subtitle__wrapper">
+                <h2 class="general__information">Thông tin chi tiết cho từng kích cở sản phẩm</h2>
+            </div>
+
+            <div class="product__size__wrapper">
+                <div class="each__size__wrapper">
+                    <div class="size__name__wrapper">
+                        <h3 class="size__name">Size M</h3>
+                    </div>
+                    <div class="product__list__outside">
+                        <div class="product__list__wrapper size__m">
+                            <!-- <div class="added__product__by__size">
+                                <h3>Số lượng 1.000.000</h3>
+                                <h3>Màu sắc Xanh lá dương</h3>
+                                <div class="detele__wrapper">
+                                    <span class="material-symbols-outlined" style="font-size: 16px">
+                                        close
+                                        </span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="add__product__quantity">
+                        <div class="attribute__wrapper" id="input__quantity__size__m__wrapper">
+                            <label for="input__quantity" id="quantity__label">Số lượng</label>
+                            <input type="number" class="input__quantity" id="input__quantity__m">
+                        </div>
+                        <div class="attribute__wrapper">
+                            <label id="color__label">Màu sắc</label>
+                            <select class="product__color__combobox color__size__m">
+                            </select>
+                        </div>
+                        <button type="button" class="add__product" id="add__size__m">
+                            <span class="material-symbols-outlined">
+                                add_box
+                                </span>
+                        </button>
+                    </div>
+                    <h3 class="validate__input" id="validate__input__size__m">Vui lòng nhập số lượng sản phẩm</h3>
+                </div>
+
+                <div class="each__size__wrapper">
+                    <div class="size__name__wrapper">
+                        <h3 class="size__name">Size L</h3>
+                    </div>
+                    <div class="product__list__outside">
+                        <div class="product__list__wrapper size__l">
+                            <!-- <div class="added__product__by__size">
+                                <h3>Số lượng 1.000.000</h3>
+                                <h3>Màu sắc Xanh lá dương</h3>
+                                <div class="detele__wrapper">
+                                    <span class="material-symbols-outlined" style="font-size: 16px">
+                                        close
+                                        </span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="add__product__quantity">
+                        <div class="attribute__wrapper">
+                            <label for="input__quantity" id="quantity__label">Số lượng</label>
+                            <input type="number" class="input__quantity" id="input__quantity__l">
+                        </div>
+                        <div class="attribute__wrapper">
+                            <label id="color__label">Màu sắc</label>
+                            <select class="product__color__combobox color__size__l">
+                            </select>
+                        </div>
+                        <button type="button" class="add__product" id="add__size__l">
+                            <span class="material-symbols-outlined">
+                                add_box
+                                </span>
+                        </button>
+                    </div>
+                    <h3 class="validate__input" id="validate__input__size__l">Vui lòng nhập số lượng sản phẩm</h3>
+                </div>
+
+                <div class="each__size__wrapper">
+                    <div class="size__name__wrapper">
+                        <h3 class="size__name">Size XL</h3>
+                    </div>
+                    <div class="product__list__outside">
+                        <div class="product__list__wrapper size__xl">
+                            <!-- <div class="added__product__by__size">
+                                <h3>Số lượng 1.000.000</h3>
+                                <h3>Màu sắc Xanh lá dương</h3>
+                                <div class="detele__wrapper">
+                                    <span class="material-symbols-outlined" style="font-size: 16px">
+                                        close
+                                        </span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="add__product__quantity">
+                        <div class="attribute__wrapper">
+                            <label for="input__quantity" id="quantity__label">Số lượng</label>
+                            <input type="number" class="input__quantity" id="input__quantity__xl">
+                        </div>
+                        <div class="attribute__wrapper">
+                            <label id="color__label">Màu sắc</label>
+                            <select class="product__color__combobox color__size__xl">
+                            </select>
+                        </div>
+                        <button type="button" class="add__product" id="add__size__xl">
+                            <span class="material-symbols-outlined">
+                                add_box
+                                </span>
+                        </button>
+                    </div>
+                    <h3 class="validate__input" id="validate__input__size__xl">Vui lòng nhập số lượng sản phẩm</h3>
+                </div>
+
+                <div class="each__size__wrapper">
+                    <div class="size__name__wrapper">
+                        <h3 class="size__name">Size XXL</h3>
+                    </div>
+                    <div class="product__list__outside">
+                        <div class="product__list__wrapper size__xxl">
+                            <!-- <div class="added__product__by__size">
+                                <h3>Số lượng 1.000.000</h3>
+                                <h3>Màu sắc Xanh lá dương</h3>
+                                <div class="detele__wrapper">
+                                    <span class="material-symbols-outlined" style="font-size: 16px">
+                                        close
+                                        </span>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="add__product__quantity">
+                        <div class="attribute__wrapper">
+                            <label for="input__quantity" id="quantity__label">Số lượng</label>
+                            <input type="number" class="input__quantity" id="input__quantity__xxl">
+                        </div>
+                        <div class="attribute__wrapper">
+                            <label id="color__label">Màu sắc</label>
+                            <select class="product__color__combobox color__size__xxl">
+                            </select>
+                        </div>
+                        <button type="button" class="add__product" id="add__size__xxl">
+                            <span class="material-symbols-outlined">
+                                add_box
+                                </span>
+                        </button>
+                    </div>
+                    <h3 class="validate__input" id="validate__input__size__xxl">Vui lòng nhập số lượng sản phẩm</h3>
+                </div>
+            </div>
+
+            <div class="loading__icon">
+                <img src="../../img/utils/ball_loading.svg" id="loading__image" alt="Loading">
+            </div>
+
+            <div class="handle__buttons__wrapper">
+                <button type="button" id="cancel__add__new__one" class="handle__button">Hủy</button>
+                <button type="button" id="save__new__one" class="handle__button">Thêm</button>
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+<script type="module" src="../../js/admin/add-new-product.js"></script>
+</html>

@@ -1,0 +1,76 @@
+.footer{
+    padding-top: 100px;
+    margin: 0;
+    margin-top: 30px;
+    display: flex;
+    font-family: Lexend Zetta;
+    flex-direction: column;
+    border-top: 2px #D9D9D9 solid;
+}
+
+.footer h4{
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 20px;
+    text-align: left;
+    color: #825B32;
+}
+
+.footer .infor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contract{
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.contract .footer-logo{
+    margin-right: 30px;
+    margin-top: 20px;
+    height: 152px;
+}
+.contract img{
+    height: 100%;
+}
+
+.group-paraph{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.group-paraph span{
+    margin-right: 18px;
+    color: #825B32;
+}
+.group-paraph p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    color: #222831;
+}
+.social{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+.social p{
+    color: #825B32;
+}
+.social .social-list{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+}
+.social-list a+a{
+    padding: 0 30px;
+    border-left: 2px #D9D9D9 solid;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/user/header.css">
+    <link rel="stylesheet" href="../../css/user/footer.css">
+    <link rel="stylesheet" href="../../css/user/cart.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Giga:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>3TSHOP-Home</title>
+</head>
+<body>
+    <div class="cart-container">
+        <div class="header-bg">
+            <img src="../../img/utils/cart-bg.png" alt="">
+            <h4 class="heading">GIỎ HÀNG CỦA BẠN</h4>
+        </div>
+        <div class="cart-content">
+            <div class="cart-item-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>
+                                <input class="check-all rounded-checkbox" type="checkbox" name="" id="">
+                                Chọn tất cả
+                            </th>
+                            <th>Sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Giá</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items">
+                        
+                    </tbody>
+                </table>                
+            </div>
+            <div class="total-container">
+                <div class="title">
+                    <h4>TỔNG GIỎ HÀNG</h4>
+                    <div class="total-price">
+                        <div class="group-content">
+                            <label for="">Tạm tính</label>
+                            <p class="subtotal">0đ</p>
+                        </div>
+                        <div class="group-content">
+                            <label for="">Phí giao hàng</label>
+                            <p>30.000đ</p>
+                        </div>
+                        <div class="group-content">
+                            <label class="label-total" for="">Tổng</label>
+                            <p class="total">30.000đ</p>
+                        </div>
+                        <a id="checkout-button">Tiến hành thanh toán</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../../js/user/page/cart.js"></script>
+</body>
+</html>

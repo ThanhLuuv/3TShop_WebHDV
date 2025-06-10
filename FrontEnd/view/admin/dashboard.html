@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/admin/dashboard.css">
+    <link rel="stylesheet" href="../../css/admin/navigation.css">
+    <link rel="stylesheet" href="../../css/admin/toast.css">
+    <link rel="stylesheet" href="../../css/admin/spinner.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>DASHBOARD</title>
+</head>
+<body>
+    <div id="background">
+        <div class="navigation"></div>
+        <div class="loading__icon">
+            <img src="../../img/utils/ball_loading.svg" id="loading__image" alt="Loading">
+        </div>
+        <div class="wrapper">
+            <div id="toast-container" class="toast-container">
+            </div>
+            <div class="title__wrapper">
+                <h2>Thống kê doanh thu</h2>
+            </div>
+            <div class="statistic__by__date__wrapper">
+                <div class="statistic__by__date__title">
+                    <label for="input__statistic__by__date">Thống kê theo ngày</label>
+                    <input type="date" id="input__statistic__by__date">
+                    <button type="button" id="view__statistic__by__date">Xem</button>
+                </div>
+                <div class="statistic__list__wrapper">
+                    <div class="statistic__item" id="show__revenue">
+                        <h3>Tổng doanh thu</h3>
+                        <div class="show__total__revenue" id="total__revenue">
+                            <h2 class="show__number revenue">0</h2>
+                            <h3>VND</h3>
+                        </div>
+                        <div class="show__compare__percent" id="revenue">
+                            <!-- <span class="material-symbols-outlined increase">
+                                arrow_warm_up
+                            </span>
+                            <h3 id="increase__result">45.6%</h3>
+                            <h3>hôm qua</h3> -->
+                        </div>
+                    </div>
+                    <div class="statistic__item" id="show__order">
+                        <h3>Tổng số đơn hàng mới</h3>
+                        <div class="show__total__revenue">
+                            <h2 class="show__number total__new__order">0</h2>
+                            <h3>đơn</h3>
+                        </div>
+                        <div class="show__compare__percent" id="order">
+                            <!-- <span class="material-symbols-outlined compare">
+                                compare_arrows
+                            </span>
+                            <h3 id="equal__result" class="compare">bằng</h3>
+                            <h3>hôm qua</h3> -->
+                        </div>
+                    </div>
+                    <div class="statistic__item" id="show__product">
+                        <h3>Tổng sản phẩm bán ra</h3>
+                        <div class="show__total__revenue">
+                            <h2 class="show__number total__bought__product">0</h2>
+                            <h3>sản phẩm</h3>
+                        </div>
+                        <div class="show__compare__percent" id="product">
+                            <!-- <span class="material-symbols-outlined decrease">
+                                arrow_cool_down
+                            </span>
+                            <h3 id="decrease__result" class="decrease">50.9%</h3>
+                            <h3>hôm qua</h3> -->
+                        </div>
+                    </div>
+                    <div class="statistic__item" id="show__complete__order">
+                        <h3>Tổng số đơn hàng thành công</h3>
+                        <div class="show__total__revenue">
+                            <h2 class="show__number ratio__success__order">0</h2>
+                            <h3>đơn</h3>
+                        </div>
+                        <div class="show__compare__percent" id="success_order">
+                            <!-- <span class="material-symbols-outlined decrease">
+                                arrow_cool_down
+                            </span>
+                            <h3 id="decrease__result" class="decrease">45.6%</h3>
+                            <h3>hôm qua</h3> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="chart__wrapper">
+                    <div class="chart__detail__wrapper" id="chart__year">
+                        <div class="statistic__by__year__wrapper">
+                            <h2>Doanh thu qua các tháng trong năm</h2>
+                            <div class="input__year__wrapper">
+                                <input type="number" 
+                                min="1900" 
+                                max="2100" 
+                                step="1"
+                                id="input__year">
+                                <button type="button" id="statistic__year">Xem</button>
+                            </div>
+                        </div>
+                        <div>
+                            <canvas id="chart__by__year"></canvas>
+                        </div>
+                    </div>
+                    <!-- <div class="show__chart__by__month"> -->
+                        <div class="chart__detail__wrapper" id="chart__month">
+                            <div class="statistic__by__month__wrapper">
+                                <h2>Doanh thu qua các ngày trong tháng</h2>
+                                <div class="input__year__wrapper">
+                                    <input type="month" id="input__month">
+                                    <button type="button" id="statistic__month">Xem</button>
+                                </div>
+                            </div>
+                            <div class="outside__chart">
+                                <canvas id="chart__by__month"></canvas>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                </div>
+                <div class="revenue__market__share__top__10__product">
+                    <div class="revenue__market__share__wrapper">
+                        <div class="percent__category__wrapper">
+                            <h2>Thị phần doanh mục bán ra trong tháng</h2>
+                            <div class="input__year__wrapper">
+                                <input type="month" id="input__month__market__share">
+                                <button type="button" id="percent__category__month">Xem</button>
+                            </div>
+                        </div>
+                        <div class="outside__chart">
+                            <canvas id="doughnut__chart__by__month"></canvas>
+                        </div>
+                    </div>
+                    <div class="top__10__product">
+                        <h2>Top các sản phẩm chán chạy</h2>
+                        <div class="top__product__detail__outside">
+                            <!-- <table>
+                                <thead>
+                                    <th>
+                                        <td class="order__number"></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </th>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+                            <!-- <div class="top__product__detail__wrapper">
+                                <div class="order__number__wrapper">
+                                    <h2 class="order__number">01</h2>
+                                </div>
+                                <div class="content__wrapper">
+                                    <img src="../../img/utils/product__order.png" class="product__image" alt="Product Image">
+                                    <h3 class="product__name">Áo thun nam cổ tròn</h3>
+                                    <h3>12.000.000 lượt bán</h3>                                
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="note__wrapper">
+                            <span class="material-symbols-outlined scroll__icon" style="font-size: 12px;">
+                                keyboard_double_arrow_down
+                            </span>
+                            <h3 class="scroll__to__view">cuộn để xem thêm</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script type="module" src="../../js/admin/dashboard.js"></script>
+    <script type="module" src="../../js/admin/navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+#loading__image {
+  width: 100px;
+  height: 100%;
+}
+
+.loading__icon {
+  height: 100%;
+  width: 100%;
+  background-color: #fbfbfb36;
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

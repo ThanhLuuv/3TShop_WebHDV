@@ -1,0 +1,54 @@
+.container{
+    margin: 60px 10px 0px 10px;
+    font-family: Lexend Giga;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container img{
+    width: 320px;
+}
+.container .status{
+    font-size: 24px;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+.container .message{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+}
+.container div{
+    display: flex;
+    gap: 0;
+    margin-top: 10px;
+}
+
+.container div a{
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    color: #825B32;
+    padding: 0 10px;
+}
+.container a+a{
+    border-left: 1px #825B32 solid ;
+}
+
+.success{
+    color: #4CAF50;
+}
+
+.error{
+    color: #F44336;
+}
+#error{
+    display: none;
+}
+.active{
+    display: block;
+}

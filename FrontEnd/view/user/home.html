@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/user/header.css">
+    <link rel="stylesheet" href="../../css/user/footer.css">
+    <link rel="stylesheet" href="../../css/user/home.css">
+    <link rel="stylesheet" href="../../css/user/category.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>3TSHOP-Home</title>
+    <style>
+        .loading-spinner {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 8px solid #f3f3f3;
+            border-top: 8px solid #3498db;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        .hot-product-container, .new-product-container {
+            position: relative;
+            min-height: 200px; /* Ensure space for spinner */
+        }
+        .hot-product-list, .new-product-list {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        .hot-product-list.loading, .new-product-list.loading {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="home-container">
+        <div class="slider"></div>
+        <div class="carousel-container"></div>  
+        <div class="hot-product">
+            <div class="title">
+                <h4>SẢN PHẨM BÁN CHẠY</h4>
+            </div>
+            <div class="hot-product-container">
+                <div class="loading-spinner" id="hot-product-spinner"></div>
+                <div class="hot-product-list"></div>
+                <button class="prev-hot-product">
+                    <span class="material-symbols-outlined btn">arrow_back_ios</span>
+                </button>
+                <button class="next-hot-product">
+                    <span class="material-symbols-outlined btn">arrow_forward_ios</span>
+                </button>
+            </div>  
+        </div>  
+        <div class="new-product">
+            <div class="title">
+                <h4>SẢN PHẨM MỚI</h4>
+            </div>
+            <div class="new-product-container">
+                <div class="loading-spinner" id="new-product-spinner"></div>
+                <div class="new-product-list"></div>
+                <button class="prev-new-product">
+                    <span class="material-symbols-outlined btn">arrow_back_ios</span>
+                </button>
+                <button class="next-new-product">
+                    <span class="material-symbols-outlined btn">arrow_forward_ios</span>
+                </button>
+            </div>  
+        </div> 
+        <div class="introduce">
+            <div class="title">
+                <h4>THÔNG TIN VỀ CHÚNG TÔI</h4>
+            </div>
+            <div class="introduce-container">
+                <div class="hot-product-list">
+                    <img src="../../img/utils/intro.png" alt="">
+                    <div class="intro-content">
+                        <p>Ra mắt Sài Gòn vào năm 2019, 3TShop không chỉ là một local brand, mà còn là biểu tượng của sự thanh lịch và đam mê. Được sáng lập bởi một nhóm các nhà thiết kế trẻ tuổi, đầy nhiệt huyết 3TShop mang trong mình tinh thần của những con người yêu sự thanh lịch và tối giản. 3TShop không chỉ tạo ra thời trang, mà còn tạo ra câu chuyện, một phong cách sống và cá tính. Từng bước phát triển, 3TShop giờ đã là cái tên quen thuộc trong lòng giới trẻ Việt, bây giờ, bọn mình quyết tâm lan tỏa nhiệt huyết về đêm đến mọi nơi ở châu Á.</p>
+                    </div>
+                </div>
+            </div>  
+        </div>                
+    </div>
+    <script type="module" src="../../js/user/page/home.js"></script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/user/header.css">
+    <link rel="stylesheet" href="../../css/user/footer.css">
+    <link rel="stylesheet" href="../../css/user/home.css">
+    <link rel="stylesheet" href="../../css/user/category.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>3TSHOP-Home</title>
+</head>
+<body>
+    <div class="home-container">
+        <div class="slider">
+            
+        </div>
+        <div class="carousel-container">
+            
+        </div>  
+        <div class="hot-product">
+            <div class="title">
+                <h4>SẢN PHẨM BÁN CHẠY</h4>
+            </div>
+            <div class="hot-product-container">
+                <div class="hot-product-list">
+                    
+                </div>
+                <button class="prev-hot-product">
+                    <span class="material-symbols-outlined btn">
+                        arrow_back_ios
+                    </span>
+                </button>
+                <button class="next-hot-product">
+                    <span class="material-symbols-outlined btn">
+                        arrow_forward_ios
+                    </span>
+                </button>
+            </div>  
+        </div>  
+
+        <div class="new-product">
+            <div class="title">
+                <h4>SẢN PHẨM MỚI</h4>
+            </div>
+            <div class="new-product-container">
+                <div class="new-product-list">
+                    
+                </div>
+                <button class="prev-new-product">
+                    <span class="material-symbols-outlined btn">
+                        arrow_back_ios
+                    </span>
+                </button>
+                <button class="next-new-product">
+                    <span class="material-symbols-outlined btn">
+                        arrow_forward_ios
+                    </span>
+                </button>
+            </div>  
+        </div> 
+        <div class="introduce">
+            <div class="title">
+                <h4>THÔNG TIN VỀ CHÚNG TÔI</h4>
+            </div>
+            <div class="introduce-container">
+                <div class="hot-product-list">
+                    <img src="../../img/utils/intro.png" alt="">
+                    <div class="intro-content">
+                        <p>Ra mắt Sài Gòn vào năm 2019, 3TShop không chỉ là một local brand, mà còn là biểu tượng của sự thanh lịch và đam mê. Được sáng lập bởi một nhóm các nhà thiết kế trẻ tuổi, đầy nhiệt huyết 3TShop mang trong mình tinh thần của những con người yêu sự thanh lịch và tối giản. 3TShop không chỉ tạo ra thời trang, mà còn tạo ra câu chuyện, một phong cách sống và cá tính. Từng bước phát triển, 3TShop giờ đã là cái tên quen thuộc trong lòng giới trẻ Việt, bây giờ, bọn mình quyết tâm lan tỏa nhiệt huyết về đêm đến mọi nơi ở châu Á.</p>
+                    </div>
+                </div>
+            </div>  
+        </div>                
+    </div>
+    <script type="module" src="../../js/user/page/home.js"></script>
+</body>
+</html> -->

@@ -1,0 +1,128 @@
+.confirm__order__background, .cancel__order__background {
+    position: fixed;
+    background-color: #222831be;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+.confirm__order__outside {
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 8px;
+}
+
+.confirm__order__wrapper {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    background-color: #ffffff;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 32px;
+    scale: 0.5;
+    opacity: 0.5;
+}
+
+.confirm__order__animation.active, .cancel__order__animation.active {
+    transition: all 0.2s ease;
+    scale: 1;
+    opacity: 1
+}
+
+.confirm__order__animation.disabled, .cancel__order__animation.disabled {
+    transition: all 0.3s ease-out;
+    scale: 0.1;
+    opacity: 0.1;
+}
+
+.icon__close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+}
+
+.icon__close span {
+    font-size: 16px;
+}
+
+.body__modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.content {
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+#title__confirm__modal {
+    font-size: 14px;
+}
+
+.confirm__order {
+    width: 100px;
+    height: 100px;
+}
+
+.button__wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 100px;
+}
+
+.button__wrapper button {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+#confirm__order__btn, #cancel__order__btn {
+    background-color: #222831;
+    color: #ffffff;
+}
+
+.content__wrapper {
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center;
+    align-items: center; */
+    text-align: center;
+    height: fit-content;
+    
+}
+
+#input__cancel__reason {
+    border: 1px solid #D0D0D0;
+    outline: none;
+    border-radius: 4px;
+    height: 100px;
+    width: 300px;
+    padding: 4px;
+    resize: none;
+}
+
+#validate__input__reason {
+    font-size: 10px;
+    color: #FF7878;
+    opacity: 0;
+}

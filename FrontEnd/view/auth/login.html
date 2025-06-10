@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../css/auth/login.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/a9788993db.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>3TShop - ĐĂNG NHẬP</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <img src="../../img/utils/LOGO_3TSHOP_ADMIN.png" class="logo_img" />
+        <h2 class="wellcome__title">CHÀO MỪNG BẠN</h2>
+        <div class="login__form">
+          <div class="username__box">
+            <label class="label_input" for="username__input"
+              >Tên tài khoản</label
+            >
+            <input type="text" id="username__input" class="__input" />
+            <div id="username__status" class="validate__noti">
+              Vui lòng nhập tên tài khoản
+            </div>
+          </div>
+          <div class="password__box">
+            <label class="label_input" for="password__input">Mật khẩu</label>
+            <input
+              type="password"
+              id="password__input"
+              class="__input"
+              oninput="toggleEyeIcons()"
+            />
+            <i
+              class="fa-regular fa-eye toggle__eye toggle"
+              onclick="togglePassword()"
+              style="display: none"
+            ></i>
+            <i
+              class="fa-regular fa-eye-slash toggle__eye__slash toggle"
+              onclick="togglePassword()"
+              style="display: none"
+            ></i>
+            <div id="password__status" class="validate__noti">
+              Vui lòng nhập mật khẩu
+            </div>
+          </div>
+          <div class="forgot__password__box">
+            <a href="/forgot-password">Quên mật khẩu?</a>
+          </div>
+          <div class="action_form">
+            <button id="login__btn" class="btn__login" onclick="login()">
+              Đăng nhập
+            </button>
+            <span>hoặc</span>
+            <button id="google__login__btn" class="btn__login">
+              <img src="../../img/utils/google_logo.png" />
+              Đăng nhập với Google
+            </button>
+            <span
+              >Bạn chưa có tài khoản?
+              <a href="/register">Đăng ký</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../../js/auth/login.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script>
+    document
+      .getElementById("google__login__btn")
+      .addEventListener("click", function () {
+        window.location.href =
+          "http://localhost:8080/oauth2/authorization/google";
+      });
+
+    window.onload = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const token = urlParams.get("token");
+
+      if (token) {
+        localStorage.setItem("token", token); // Lưu token vào localStorage
+        window.location.href = "/"; // Chuyển đến trang chính sau khi lưu token
+      }
+    };
+  </script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/user/header.css">
+    <link rel="stylesheet" href="../../css/user/footer.css">
+    <link rel="stylesheet" href="../../css/user/order.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Giga:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>3TSHOP-Home</title>
+</head>
+<body>
+    <div class="personal-infor-container">
+        <div class="header-bg">
+            <img src="../../img/utils//order-bg.png" alt="">
+            <h4 class="heading">THEO DÕI ĐƠN HÀNG</h4>
+        </div>
+        <div class="content-container">
+            <ul class="menu">
+                <li id="waiting" class="active">Đang chờ xác nhận</li>
+                <li id="shipping">Đang chờ vận chuyển</li>
+                <li id="shipped">Hoàn thành</li>
+                <li id="canceled">Bị hủy</li>
+            </ul>
+            <div class="order-list">
+            </div>
+        </div>
+        <div id="cancel-order">
+            <div class="modal-cancel">
+                <span class="close material-symbols-outlined">close</span>
+                <div class="content">
+                    <div>
+                        <img src="../../img/utils/cancel-order.png" />
+                    </div>
+                    <h4>XÁC NHẬN HỦY ĐƠN HÀNG</h4>
+                    <p>Vui lòng cho biết lí do hủy đơn</p>
+                    <textarea id="cancel-reason"></textarea>
+                    <p class="err-mess">Vui lòng nhập lý do hủy!</p>
+                    <div class="btn-container">
+                        <a class="cancel">Thoát</a>
+                        <a class="submit">Xác nhận</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../../js/user/page/order.js"></script>
+</body>
+</html>

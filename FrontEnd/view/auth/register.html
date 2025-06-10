@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../../css/auth/register.css" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a9788993db.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>3TSHOP - ĐĂNG KÝ TÀI KHOẢN</title>
+    <script src="../../js/auth/register.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content">
+        <img src="../../img/utils/LOGO_3TSHOP_ADMIN.png" class="logo_img" />
+        <h2 class="wellcome__title">ĐĂNG KÝ TÀI KHOẢN</h2>
+        <div class="normal__display">
+          <div class="login__form">
+            <div class="username__box">
+              <label class="label_input" for="username__input"
+                >Tên đăng nhập</label
+              >
+              <input type="text" id="username__input" class="__input" required />
+              <div id="username__status" class="validate__noti" ></div>
+            </div>
+            <div class="email__box">
+              <label class="label_input" for="email__input">Email</label>
+              <input type="email" id="email__input" class="__input" required />
+              <div id="email__status" class="validate__noti" ></div>
+  
+            </div>
+            <div class="password__box">
+              <label class="label_input" for="password__input">Mật khẩu</label>
+              <input
+                type="password"
+                id="password__input"
+                class="__input"
+                oninput="toggleEyeIcons('password__input')"
+                required
+              />
+              <i
+                class="fa-regular fa-eye toggle__eye password_eye toggle"
+                onclick="togglePassword('password__input', 'password_eye', 'password_eye_slash')"
+                style="display: none"
+              ></i>
+              <i
+                class="fa-regular fa-eye-slash toggle__eye_slash password_eye_slash toggle"
+                onclick="togglePassword('password__input', 'password_eye', 'password_eye_slash')"
+                style="display: none"
+              ></i>
+              <div id="password__status" class="validate__noti"></div>
+  
+            </div>
+  
+            <div class="confirm__password__box">
+              <label class="label_input" for="confirm__password__input"
+                >Xác nhận mật khẩu</label
+              >
+              <input
+                type="password"
+                id="confirm__password__input"
+                class="__input"
+                oninput="toggleEyeIcons('confirm__password__input'); checkPasswordsMatch();"
+                required
+              />
+              <i
+                class="fa-regular fa-eye toggle__eye confirm_password_eye toggle"
+                onclick="togglePassword('confirm__password__input', 'confirm_password_eye', 'confirm_password_eye_slash')"
+                style="display: none"
+              ></i>
+              <i
+                class="fa-regular fa-eye-slash toggle__eye_slash confirm_password_eye_slash toggle"
+                onclick="togglePassword('confirm__password__input', 'confirm_password_eye', 'confirm_password_eye_slash')"
+                style="display: none"
+              ></i>
+              <div id="confirm__password__match__status" class="validate__noti"></div>
+              </div>
+            </div>
+  
+            <div class="action_form">
+              <span class="exist__noti">Email hoặc Username đã tồn tại</span>
+              <button id="register__btn" class="btn__register" >Đăng Ký</button>
+            </div>
+        </div>
+          <div class="success___register__box">
+            <span>Đăng ký tài khoản thành công</span>
+            <span>Vui lòng kiểm tra email để xác minh tài khoản</span>
+          </div>
+          <a class="a__back__login" href="/login">Quay về trang đăng nhập</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

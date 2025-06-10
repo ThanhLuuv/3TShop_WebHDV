@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/admin/home.css">
+    <link rel="stylesheet" href="../../css/admin/navigation.css">
+    <link rel="stylesheet" href="../../css/admin/modal.css">
+    <link rel="stylesheet" href="../../css/admin/toast.css">
+    <link rel="stylesheet" href="../../css/admin/spinner.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>QUẢN LÝ SẢN PHẨM</title>
+</head>
+<body>
+    <div class="parent__div">
+        <!-- <div class="navigation"></div> -->
+        <div class="wrapper">
+            <div id="toast-container" class="toast-container">
+            </div>
+            <h3 id="title__category">
+                XEM THEO DANH MỤC
+            </h3>
+            <div id="category__and__search">
+                <div class="scroll__to__previous">
+                    <span class="material-symbols-outlined">
+                        chevron_left
+                        </span>
+                </div>
+                <div id="list__category__wrapper">
+                    <div id="list__category">
+                        <!-- <div class="each__category">
+                            <h5>Áo thun</h5>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="scroll__to__next">
+                    <span class="material-symbols-outlined">
+                        chevron_right
+                        </span>
+                </div>
+            </div>
+    
+            <div class="outside">
+                <div class="management__prroduct__wrapper">
+                    <!-- Tieu de -->
+                    <div class="product__management__title__wrapper">
+                        <h4 id="title__list__product">
+                            DANH SÁCH SẢN PHẨM
+                        </h4>
+                    </div>
+            
+                    <!-- Phan filter va sort -->
+                    <div id="filter__and__sort__wrapper">
+                        <div id="filter__wrapper">
+                            <span class="material-symbols-outlined">
+                                filter_alt
+                                </span>
+                            <!-- <div class="filter__product" id="stock__filter__wrapper">
+                                <span>Tồn kho ít</span>
+                            </div> -->
+                            <div class="filter__product" id="hidden__filter__wrapper">
+                                <span>Bị ẩn</span>
+                            </div>
+                        </div>
+                        <div id="sort__wrapper">
+                            <span class="material-symbols-outlined">
+                                swap_vert
+                                </span>
+                            <div id="sort__combobox__wrapper">
+                                <select id="sort__combobox">
+                                    <option value="newest">Mới nhất</option>
+                                    <option value="oldest">Cũ nhất</option>
+                                    <option value="price_asc">Giá tăng dần</option>
+                                    <option value="price_desc">Giá giảm dần</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Quan li san phan -->
+                     <div id="product__management__wrapper">
+                         <div id="product__management">
+                             <div id="add__new__and__column__name">
+                                 <div id="add__new__product__wrapper">
+                                     <span>Thêm sản phẩm mới</span>
+                                 </div>
+                                 <div id="search__product__wrapper">
+                                    <span id="search__icon" class="material-symbols-outlined">
+                                        search
+                                        </span>
+                                    <input id="input__search" type="text" placeholder="Tìm kiếm...">
+                                </div>
+                             </div>
+                                    <div class="table__wrapper">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th></th>
+                                                    <th>Giá</th>
+                                                    <th>Lượt bán</th>
+                                                    <th>Ngày tạo</th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="list__prouduct__wrapper">
+                                            </tbody>
+                                         </table>
+                                    </div>
+
+                                 <!-- <div id="list__prouduct__wrapper">             -->
+                                        <!-- <div class="product__item">
+                                            <div class="info__product__wrapper">
+                                                <h4 class="product__id" hidden></h4>
+                                                <img class="product__image" src="../../img/utils/product__img.png">
+                                                <h4 class="item__name">Basic tea</h4>
+                                                <h4 class="item__price">120.000đ</h4>
+                                                <h4 class="item__sold">1.000.000</h4>
+                                                <h4 class="item__stock">1.000.000</h4>
+                                            </div>
+                                            <div id="operation__wrapper">
+                                                <span class="material-symbols-outlined toggle__product">
+                                                    visibility_off
+                                                    </span>
+                                            </div>
+                                     </div> -->
+                                 <!-- </div> -->
+                                 
+                         </div>
+                         <div class="management__color__wrapper">
+                            <div class="header__manage__color">
+                                <h2 id="color__title">QUẢN LÝ MÀU SẮC</h2>
+                                <div class="add__new__color__wrapper">
+                                    <h4 id="add__new__color">Thêm màu sắc mới</h4>
+                                </div>
+                            </div>
+                            <div class="management__color">
+                                <div class="color__list">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>STT</th>
+                                                <th style="width: 70px;"></th>
+                                                <th>Tên màu</th>
+                                                <th>Mã màu</th>
+                                                <th>Ngày tạo</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tbody__list__color__wrapper">
+                                            <!-- <tr>
+                                                <td>${index + 1}</td>
+                                                <td>
+                                                    <img src=${renderImage(item.image)} alt="Category Image">
+                                                </td>
+                                                <td class="category__name">${item.name}</td>
+                                                <td class="category__created">${Utils.formatDateTime(item.create_at)}</td>
+                                                <td>
+                                                    <div class="edit__info edit__category">
+                                                        <span style="font-size: 20px" class="material-symbols-outlined">
+                                                            edit
+                                                            </span>
+                                                    </div>
+                                                </td>
+                                            </tr> -->
+                                        </tbody>
+                                    </table>
+                                    <!-- <div class="each__color__wrapepr">
+                                        <div class="color__preview__wrapper"></div>
+                                        <h4 class="color__name">Xanh dương nhạt nhòa</h4>
+                                        <h4 class="color__code">Mã màu 098445</h4>
+                                        <h4 class="color__created">Ngày tạo 10/10/2024 13:00:00</h4>
+                                        <div class="edit__info">
+                                            <span style="font-size: 20px" class="material-symbols-outlined">
+                                                edit
+                                                </span>
+                                        </div>
+                                        <div class="toggle__color">
+                                            <span style="font-size: 20px" class="material-symbols-outlined">
+                                                visibility_off
+                                                </span>
+                                        </div>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                     </div>
+                </div>
+    
+                <!-- CHI TIET SAN PHAM -->
+                <div class="detail__wrapper">
+                    <div class="product__detail">
+                        <div class="product__management__title__wrapper">
+                            <h4 id="title__list__product__spec">
+                                CHI TIẾT SẢN PHẨM
+                            </h4>
+                        </div>
+    
+                        <div class="detail__product__wrapper">
+                            <!-- <div class="col__name">
+                                <div class="left__col__name">
+                                    <h5 class="sold__left__col">Lượt bán</h5>
+                                    <h5 class="stock__left__col">Tồn kho</h5>
+                                </div>
+                            </div> -->
+                            <div id="size__product__detail">
+                                
+                                <div class="product__detail__size">
+                                    <div class="each__size__field">
+                                        <div class="size__name">
+                                            <h2 class="size">M</h2>
+                                        </div>
+                                        <div class="size__detail__wrapper">
+                                            <table>
+                                                <thead class="thead__spec">
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>Màu</td>
+                                                        <td>Tồn kho</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="size__m">
+                                                </tbody>
+                                            </table>
+                                            <!-- <div class="size__detail">
+                                                <div class="color__infor">
+                                                    <div class="color__preview"></div>
+                                                    <div class="color__name__product">Xanh la</div>
+                                                </div>
+                                                <div class="soled">Lượt bán 45</div>
+                                                <div class="stock">Tồn kho 68</div>
+                                                <div class="edit__info">
+                                                    <span class="material-symbols-outlined">
+                                                        edit
+                                                    </span>
+                                                    <span class="material-symbols-outlined toggle__product__detail">
+                                                        visibility_off
+                                                    </span>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                    <div class="each__size__field">
+                                        <div class="size__name">
+                                            <h2 class="size">L</h2>
+                                        </div>
+                                        <div class="size__detail__wrapper">
+                                            <table>
+                                                <thead class="thead__spec">
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>Màu</td>
+                                                        <td>Tồn kho</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="size__l">
+                                                </tbody>
+                                            </table>
+                                            <!-- <div class="size__detail">
+                                                <div class="color__infor">
+                                                    <span class="product__detail__id" hidden></span>
+                                                    <div class="color__preview"></div>
+                                                    <div class="color__name__product">Xanh la</div>
+                                                </div>
+                                                <div class="soled">Lượt bán 45</div>
+                                                <div class="stock">Tồn kho 68</div>
+                                                <div class="edit__info">
+                                                    <span class="material-symbols-outlined">
+                                                        edit
+                                                        </span>
+                                                    <span class="material-symbols-outlined toggle__product__detail">
+                                                        visibility_off
+                                                        </span>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+            
+                                    <div class="each__size__field">
+                                        <div class="size__name">
+                                            <h2 class="size">XL</h2>
+                                        </div>
+                                        <div class="size__detail__wrapper">
+                                            <table>
+                                                <thead>
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>Màu</td>
+                                                        <td>Tồn kho</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="size__xl">
+                                                </tbody>
+                                            </table>
+                                             <!-- <div class="size__detail">
+                                                <div class="color__infor">
+                                                    <div class="color__preview"></div>
+                                                    <div class="color__name__product">Xanh la</div>
+                                                </div>
+                                                <div class="soled">Lượt bán 45</div>
+                                                <div class="stock">Tồn kho 68</div>
+                                                <div class="edit__info">
+                                                    <span style="font-size: 20px" class="material-symbols-outlined">
+                                                        edit
+                                                        </span>
+                                                    <span class="material-symbols-outlined">
+                                                        visibility_off
+                                                        </span>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+            
+                                    <div class="each__size__field">
+                                        <div class="size__name">
+                                            <h2 class="size">XXL</h2>
+                                        </div>
+                                        <div class="size__detail__wrapper">
+                                            <table>
+                                                <thead class="thead__spec">
+                                                    <tr>
+                                                        <td></td>
+                                                        <td>Màu</td>
+                                                        <td>Tồn kho</td>
+                                                        <td></td>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="size__xxl">
+                                                </tbody>
+                                            </table>
+                                            <!-- <div class="size__detail">
+                                                <div class="color__infor">
+                                                    <div class="color__preview"></div>
+                                                    <div class="color__name__product">Xanh la</div>
+                                                </div>
+                                                <div class="soled">Lượt bán 45</div>
+                                                <div class="stock">Tồn kho 68</div>
+                                                <div class="edit__info">
+                                                    <span style="font-size: 20px" class="material-symbols-outlined">
+                                                        edit
+                                                        </span>
+                                                    <span class="material-symbols-outlined">
+                                                        visibility_off
+                                                        </span>
+                                                </div>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="management__area">
+                            <div class="management__category__wrapper">
+                                <div class="header__manage__category">
+                                    <h2 id="category__title">QUẢN LÝ DANH MỤC</h2>
+                                    <div class="add__new__category">
+                                        <h4 id="add__new__title">Thêm danh mục mới</h4>
+                                    </div>
+                                </div>
+                                <div class="management__category">
+                                    <div class="category__list">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th>STT</th>
+                                                    <th></th>
+                                                    <th>Tên danh mục</th>
+                                                    <th>Ngày tạo</th>
+                                                    <th></th>
+                                                    <th></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbody__list__category__wrapper">
+                                                <!-- <tr>
+                                                    <td>${index + 1}</td>
+                                                    <td>
+                                                        <img src=${renderImage(item.image)} alt="Category Image">
+                                                    </td>
+                                                    <td class="category__name">${item.name}</td>
+                                                    <td class="category__created">${Utils.formatDateTime(item.create_at)}</td>
+                                                    <td>
+                                                        <div class="edit__info edit__category">
+                                                            <span style="font-size: 20px" class="material-symbols-outlined">
+                                                                edit
+                                                                </span>
+                                                        </div>
+                                                    </td>
+                                                </tr> -->
+                                            </tbody>
+                                        </table>
+                                        
+                                        <!-- <div class="each__category__wrapepr">
+                                            <img src="../../img/utils/category_img.png">
+                                            <h4 class="category__name">Áo sơ mi</h4>
+                                            <h4 class="category__created">Ngày tạo 10/10/2024 13:00:00</h4>
+                                            <div class="edit__info">
+                                                <span style="font-size: 20px" class="material-symbols-outlined">
+                                                    edit
+                                                    </span>
+                                            </div>
+                                            <div class="toggle__category">
+                                                <span style="font-size: 20px" class="material-symbols-outlined">
+                                                    visibility_off
+                                                    </span>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- </div> -->
+        </div>
+        <div id="new__category__background">
+            <div class="add__new__category__wrapper">
+                <div class="icon__close__category__modal">
+                    <span class="material-symbols-outlined">
+                        close
+                        </span>
+                </div>
+                
+                <div class="add__new__outside">
+                    <div class="icon__and__fields">
+                        <img id="category__icon" src="../../img/utils/categories.png" alt="category icon">
+                        <div class="fields">
+                            <h1 style="font-size: 14px" class="title__category__modal">THÊM DANH MỤC MỚI</h1>
+                            <div class="input__wrapper">
+                                <label for="input__category__name" class="label__name">Tên danh mục</label>
+                                <input id="input__category__name" type="text">
+                                <label id="category__name__validate">Vui lòng nhập tên danh mục</label>
+                            </div>
+                            <div class="input__wrapper">
+                                <label for="" class="label__name">Hình ảnh minh họa</label>
+                                <img src="#" alt="category" id="category__img" hidden>
+                                <label for="input__category__img" class="input__category__label">
+                                    <span class="material-symbols-outlined" id="icon__add__new__category">
+                                        add_photo_alternate
+                                        </span>
+                                    <span class="material-symbols-outlined" id="success__upload">
+                                        task_alt
+                                        </span>
+                                </label>
+                                <label id="category__img__validate">Vui lòng tải lên hình ảnh danh mục</label>
+                            </div>
+                            <input id="input__category__img" type="file" accept="image/*">
+                        </div>
+                    </div>
+                    <div class="handle__buttons">
+                        <button id="cancel__new__category" class="button">Hủy</button>
+                        <button id="save__new__category" class="button" data-action="add">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THEM MAU SAC MOI -->
+        <div id="new__color__background">
+            <div class="add__new__color__outside">
+                <div class="icon__close__color__modal">
+                    <span class="material-symbols-outlined">
+                        close
+                        </span>
+                </div>
+                
+                <div class="add__new__outside">
+                    <div class="icon__and__fields">
+                        <img id="color__icon" src="../../img/utils/color-palette.png" alt="Color icon">
+                        <div class="fields">
+                            <h1 style="font-size: 14px" class="title__color">THÊM MÀU SẮC MỚI</h1>
+                            <div class="input__wrapper">
+                                <label for="input__color__name" class="label__name">Tên màu sắc</label>
+                                <input id="input__color__name" type="text">
+                                <label id="color__name__validate">Vui lòng nhập tên màu sắc</label>
+                            </div>
+                            <div class="input__wrapper">
+                                <label for="" class="label__name">Mã màu</label>
+                                <div id="color__code__wrapper">
+                                    <div class="color-picker"></div>
+                                    <input id="input__color__code" type="text" disabled>
+                                    <!-- <div id="color__code__preview">
+                                        <img id="color__preview__icon" src="../../img/utils/paint-bucket.png" alt="Color preview">
+                                    </div> -->
+                                </div>
+                                <label id="color__code__validate">Vui lòng nhập mã màu</label>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="handle__buttons">
+                        <button id="cancel__new__color" class="button">Hủy</button>
+                        <button id="save__new__color" class="button" data-action="add">Lưu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MODAL XÁC NHẬN ẨN -->
+        <div class="confirm__order__background">
+            <!-- <div class="hide__product__wrapper">
+                <div class="icon__close__hidden__modal">
+                    <span class="material-symbols-outlined">
+                        close
+                        </span>
+                </div>
+                <div class="content__wrapper">
+                    <img id="icon__hidden" src="../../img/utils/hide.png" alt="Hidden">
+                    <h2 id="title__hidden">XÁC NHẬN</h2>
+                    <h4 id="confirm__hidden">
+                        Bạn có chắc chắc muốn ẩn sản phẩm <br> Áo thun không ?
+                    </h4>
+                    <div class="handle__butons__wrapper">
+                        <button type="button" id="cancel__hidden">Hủy</button>
+                        <button type="submit" id="sure__hidden">Ẩn</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="edit__specification__background">
+            <div class="edit__wrapper cancel__order__animation">
+                <div class="icon__close__edit">
+                    <span class="material-symbols-outlined icon__close__modal">
+                        close
+                    </span>
+                </div>
+                <div class="body__modal__edit">
+                    <img src="../../img/utils/document-editor.png" alt="Confirm order" class="confirm__order">
+                    <div class="title__edit__wrapper">
+                        <h2 id="title__edit__modal">CHỈNH SỬA CHI TIẾT SẢN PHẨM</h2>
+                        <h2 id="spec__id">MÃ 887223</h2>
+                        <div class="content__edit__modal">
+                            <div class="color__wrapper">
+                                <label for="input__cancel__reason">Màu sắc</label>
+                                <select id="select__color">
+                                </select>
+                            </div>
+                            <div class="quantity__wrapper">
+                                <label>Tồn kho</label>
+                                <input type="number" id="edit__quantity">
+                                <h3 id="validate__input__quantity">Vui lòng nhập lý do hủy đơn</h3>
+                            </div>
+                        </div>
+                        <div class="edit__button__wrapper">
+                            <button type="button" id="cancel__edit__btn">Hủy</button>
+                            <button type="button" id="confirm__edit__btn">Xác nhận</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="loading__icon">
+            <img src="../../img/utils/ball_loading.svg" id="loading__image" alt="Loading">
+        </div>
+    </div>
+    <script type="module" src="../../js/admin/home.js"></script>
+    <script type="module" src="../../js/admin/navigation.js"></script>
+</body>
+</html> 

@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Exa';
+    font-weight: 400;
+    color: #222831;
+    font-size: 12px;
+    user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none; 
+}
+.wrapper{
+    background-image: url(../../img/auth/background_login.jpg);
+    background-size: cover; /* Phủ kín toàn bộ nền */
+    background-position: center; /* Căn giữa ảnh nền */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+    height: 100vh; /* Chiều cao toàn màn hình */
+    display: flex;
+    align-items:center;
+    justify-content:end
+}
+.content{
+    width: 36%;
+    background-color: #FFFFFF;
+    height: inherit;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+.normal__display{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo_img{
+    height: 150px;
+    width: 150px;
+    margin-top: 28px;
+    margin-bottom: 28px;
+}
+.wellcome__title{
+    font-size: 32px;
+    font-weight: 700;
+}
+.login__form{
+    width: 100%;
+    margin-top: 20px;
+}
+.username__box, .password__box, .confirm__password__box, .email__box{
+    display: flex;
+    flex-direction: column;
+}
+.password__box{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.email__box{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.toggle{
+    position: absolute;
+    right: 12px;
+    top: 32px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #825B32;
+}
+.toggle:hover{
+    opacity: 0.5;
+}
+.toggle__eye{
+    display: none;
+
+}
+.toggle__eye__slash{
+    display: none;
+}
+.confirm__password__box{
+    position: relative;
+    margin-bottom: 32px;
+}
+.password__box, .email__box, .username__box{
+    position: relative;
+}
+#username__input, #password__input, #confirm__password__input, #email__input{
+    width: 100%;
+    padding: 12px 8px;
+    border: none;
+    outline: none;
+    border-bottom: #d0d0d0 2px solid;
+}
+.label_input{
+    font-size: 12px;
+    font-weight: 400;
+}
+.__input{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.action_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+#register__btn{
+    width: 100%;
+    background-color: #A35705;
+    border-radius: 100px;
+    padding: 16px 0;
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    margin-bottom: 28px;
+    font-weight: 600;
+    outline: none;
+}
+
+
+.btn__register{
+    font-size: 14px;
+}
+.a__back__login{
+    display: block;
+    color: #825B32;
+    font-weight: 600;
+    cursor: pointer;
+}
+.a__back__login:hover{
+    text-decoration: underline;
+}
+
+#password__status, #confirm__password__match__status, #username__status, #email__status{
+    position: absolute;
+    bottom: -16px;
+    color: red;
+}
+.success___register__box{
+    display: none;
+    width: 70%;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 36vh;
+}
+.success___register__box span{
+    color: green;
+    font-size: 12px;
+    font-weight: 500;
+}
+.exist__noti{
+    display: none;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    font-size: 10px;
+    color: red;
+}
+.validate__noti{
+    display: none;
+    font-size: 10px;
+    font-weight: 300;
+}

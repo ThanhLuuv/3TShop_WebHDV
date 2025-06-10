@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/user/header.css">
+    <link rel="stylesheet" href="../../css/user/footer.css">
+    <link rel="stylesheet" href="../../css/user/personal-infor.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Giga:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>3TSHOP-Home</title>
+</head>
+<body>
+    <div class="personal-infor-container">
+        <div id="confirm">
+            <div class="modal-confirm">
+                <span class="close material-symbols-outlined">
+                    close
+                </span>
+                <div class="content">
+                    <div>
+                        <img src="../../img/utils/close.png" />
+                    </div>
+                    <h4>XÁC NHẬN</h4>
+                    <p>Bạn có chắc chẵn xóa địa chỉ này không?</p>
+                    <div class="btn-container">
+                        <a class="cancel">Hủy</a>
+                        <a class="submit">Xác nhận</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bg">
+            <img src="../../img/utils//infor-bg.png" alt="">
+            <h4 class="heading">TÀI KHOẢN CỦA BẠN</h4>
+        </div>
+        <div class="content-container">
+            <div class="personal-infor">
+                <div class="title">
+                    <h4>Thông tin cá nhân</h4>
+                </div>
+                <form action="" id="personal-infor-form">
+                    <div class="group-form">
+                        <label for="name">Họ và tên</label>
+                        <div>
+                            <input class="name" readonly type="text" name="name">
+                            <p class="mess-error error-name">Vui lòng nhập họ và tên!</p>
+                        </div>
+                    </div>
+                    <div class="group-form">
+                        <label for="sdt">Số điện thoại</label>
+                        <div>
+                            <input class="phone" readonly type="number" name="sdt">
+                            <p class="mess-error error-phone">Vui lòng nhập số điện thoại!</p>
+                        </div>
+                    </div>
+                    <div class="group-form">
+                        <label for="birthday">Ngày sinh</label>
+                        <div>
+                            <input class="birthday" readonly type="date" name="birthday">
+                            <p class="mess-error error-date">Vui lòng nhập ngày sinh!</p>
+                        </div>
+                    </div>
+                    <div class="group-form">
+                        <label for="gender">Giới tính</label>
+                        <div>
+                            <div class="gender-radio">
+                                <div>
+                                    <input disabled readonly type="radio" id="male" name="gender" value="male">
+                                    <label for="male">Nam</label><br>
+                                </div>
+                                <div>
+                                    <input disabled readonly type="radio" id="female" name="gender" value="female">
+                                    <label for="female">Nữ</label><br>
+                                </div>
+                            </div>
+                            <p class="mess-error error-gender">Vui lòng chọn giới tính!</p>
+                        </div>
+                    </div>
+                    <div class="group-form">
+                        <label for="email">Email</label>
+                        <div>
+                            <input class="email" readonly type="email" name="email">
+                            <p class="mess-error error-email">Vui lòng nhập email!</p>
+                        </div>
+                    </div>
+                    <div class="group-button">
+                        <button class="edit">Sửa thông tin</button>
+                        <button class="cancel-edit">Hủy bỏ</button>
+                        <button disabled class="save" type="submit">Lưu thay đổi</button>
+                    </div>
+                </form>
+                <form action="" id="account-infor-form">
+                    <div class="group-form">
+                        <label for="">Tên đăng nhập</label>
+                        <p class="username">luuthanh</p>
+                    </div>
+                    <div class="group-form">
+                        <label for="">Thời gian tạo tài khoản</label>
+                        <p class="create-at">26/09/2024 12:21</p>
+                    </div>
+                    <button class="change-password">Đổi mật khẩu</button>
+                </form>
+            </div>
+            <!-- <div class="address-infor">
+                <div class="title">
+                    <h4>Thông tin địa chí</h4>
+                </div>
+                <div class="default-address">
+                    <label class="address-type">Địa chỉ mặc định</label>
+                    <div class="address-container">
+                        <div class="address-content">
+                            <div>
+                                <p class="default-name">TRẦN THỊ DIỄM HÀ PHƯƠNG</p>
+                                <p class="default-phone-number">0987654321</p>
+                            </div>
+                            <p class="address-detail">41/15, đường số 11, phường Trường Thọ, Tp. Thủ Đức, Tp. HCM</p>
+                        </div>
+                        <div class="action-address">
+                            <div class="default-status">
+                                <span class="material-symbols-outlined">
+                                    close
+                                </span> 
+                                <span class="material-symbols-outlined">
+                                    edit
+                                </span>
+                            </div>
+                            
+                            <button disabled>Đặt mặc định</button>
+                        </div>
+                    </div>
+                    <button class="new-address-btn">Thêm địa chỉ giao hàng mới</button>
+                </div>
+                <div class="other-address">
+                    <label class="address-type">Địa chỉ khác</label>
+                    <div class="address-container">
+                        <div class="address-content">
+                            <div>
+                                <p class="">PHẠM THANH TRƯỜNG</p>
+                                <p class="">0987654321</p>
+                            </div>
+                            <p class="address-detail">41/15, đường số 11, phường Trường Thọ, Tp. Thủ Đức, Tp. HCM</p>
+                        </div>
+                        <div class="action-address">
+                            <div class="default-status">
+                                <span class="material-symbols-outlined">
+                                    close
+                                </span> 
+                                <span class="material-symbols-outlined">
+                                    edit
+                                </span>
+                            </div>
+                            
+                            <button>Đặt mặc định</button>
+                        </div>
+                    </div>
+                    <div class="address-container">
+                        <div class="address-content">
+                            <div>
+                                <p class="">PHẠM THANH TRƯỜNG</p>
+                                <p class="">0987654321</p>
+                            </div>
+                            <p class="address-detail">41/15, đường số 11, phường Trường Thọ, Tp. Thủ Đức, Tp. HCM</p>
+                        </div>
+                        <div class="action-address">
+                            <div class="default-status">
+                                <span class="material-symbols-outlined">
+                                    close
+                                </span> 
+                                <span class="material-symbols-outlined">
+                                    edit
+                                </span>
+                            </div>
+                            
+                            <button>Đặt mặc định</button>
+                        </div>
+                    </div>
+                    <div class="address-container">
+                        <div class="address-content">
+                            <div>
+                                <p class="">PHẠM THANH TRƯỜNG</p>
+                                <p class="">0987654321</p>
+                            </div>
+                            <p class="address-detail">41/15, đường số 11, phường Trường Thọ, Tp. Thủ Đức, Tp. HCM</p>
+                        </div>
+                        <div class="action-address">
+                            <div class="default-status">
+                                <span class="material-symbols-outlined">
+                                    close
+                                </span> 
+                                <span class="material-symbols-outlined">
+                                    edit
+                                </span>
+                            </div>
+                            
+                            <button>Đặt mặc định</button>
+                        </div>
+                    </div>
+                    <div class="address-container">
+                        <div class="address-content">
+                            <div>
+                                <p class="">PHẠM THANH TRƯỜNG</p>
+                                <p class="">0987654321</p>
+                            </div>
+                            <p class="address-detail">41/15, đường số 11, phường Trường Thọ, Tp. Thủ Đức, Tp. HCM</p>
+                        </div>
+                        <div class="action-address">
+                            <div class="default-status">
+                                <span class="material-symbols-outlined">
+                                    close
+                                </span> 
+                                <span class="material-symbols-outlined">
+                                    edit
+                                </span>
+                            </div>
+                            
+                            <button>Đặt mặc định</button>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="address-infor">
+                <div class="title">
+                    <h4>Thông tin địa chỉ</h4>
+                </div>
+                <div class="default-address">
+                    <label class="address-type">Địa chỉ mặc định</label>
+                    <div class="address-container">
+                    </div>
+                    <button class="new-address-btn">Thêm địa chỉ giao hàng mới</button>
+                </div>
+            
+                <div class="other-address">
+                    <label class="address-type">Địa chỉ khác</label>
+                </div>
+            </div>            
+        </div>
+        <div id="modal-add-address">
+            <div class="modal-body">
+                <span class=" close material-symbols-outlined">
+                    close
+                </span>
+                <div class="form-content">
+                    <div class="img-div">
+                        <span class="material-symbols-outlined">
+                            distance
+                        </span> 
+                    </div>
+                    <div class="content">
+                        <div class="title">
+                            <h4>THÊM ĐỊA CHỈ GIAO HÀNG</h4>
+                        </div>
+                        <h5>Thông tin người nhận</h5>
+                        <div class="div-group-1 infor-group">
+                            <div class="group-infor">
+                                <label for="">Họ và tên</label>
+                                <input class="full-name" type="text" name="name">
+                                <p class="mess-error error-fullname">Vui lòng nhập họ tên!</p>
+                            </div>
+                            <div class="group-infor">
+                                <label for="">Số điện thoại</label>
+                                <input class="phone" type="tel">
+                                <p class="mess-error error-phone">Vui lòng nhập số điện thoại!</p>
+                            </div>
+                        </div>
+
+                        <h5>Địa chỉ</h5>
+                        <div class="div-group-1">
+                            <div class="div-group-2">
+                                <div class="group-infor">
+                                    <label for="">Tỉnh/Thành phố</label>
+                                    <input class="province" type="text">
+                                    <p class="mess-error error-province">Vui lòng nhập Tỉnh/Thành phố!</p>
+                                </div>
+                                <div class="group-infor">
+                                    <label for="">Quận/Huyện</label>
+                                    <input class="district" type="text">
+                                    <p class="mess-error error-district">Vui lòng nhập quận/huyện!</p>
+                                </div>
+                            </div>
+                            <div class="div-group-2">
+                                <div class="group-infor">
+                                    <label for="">Xã/Phường/Thị Trấn</label>
+                                    <input class="ward" type="text">
+                                    <p class="mess-error error-ward">Vui lòng nhập xã/phường/thị trấn!</p>
+                                </div>
+                                <div class="group-infor">
+                                    <label for="">Thôn/Ấp</label>
+                                    <input class="village" type="text">
+                                    <p class="mess-error error-village">Vui lòng nhập thôn/ấp!</p>
+                                </div>
+                            </div>
+                            <div class="group-infor">
+                                <label for="">Địa chỉ chi tiết</label>
+                                <input class="detailed" type="text">
+                                <p class="mess-error error-detailed">Vui lòng nhập địa chỉ chi tiết!</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="btn-container">
+                    <button class="cancel">Hủy</button>
+                    <button class="submit">Lưu</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal-edit-address">
+            <div class="modal-body">
+                <span class=" close material-symbols-outlined">
+                    close
+                </span>
+                <div class="form-content">
+                    <div class="img-div">
+                        <span class="material-symbols-outlined">
+                            distance
+                        </span> 
+                    </div>
+                    <div class="content">
+                        <div class="title">
+                            <h4>THÊM ĐỊA CHỈ GIAO HÀNG</h4>
+                        </div>
+                        <h5>Thông tin người nhận</h5>
+                        <div class="div-group-1 infor-group">
+                            <div class="group-infor">
+                                <label for="">Họ và tên</label>
+                                <input class="full-name" type="text" name="name">
+                                <p class="mess-error error-fullname">Vui lòng nhập họ tên!</p>
+                            </div>
+                            <div class="group-infor">
+                                <label for="">Số điện thoại</label>
+                                <input class="phone" type="tel">
+                                <p class="mess-error error-phone">Vui lòng nhập số điện thoại!</p>
+                            </div>
+                        </div>
+
+                        <h5>Địa chỉ</h5>
+                        <div class="div-group-1">
+                            <div class="div-group-2">
+                                <div class="group-infor">
+                                    <label for="">Tỉnh/Thành phố</label>
+                                    <input class="province" type="text">
+                                    <p class="mess-error error-province">Vui lòng nhập Tỉnh/Thành phố!</p>
+                                </div>
+                                <div class="group-infor">
+                                    <label for="">Quận/Huyện</label>
+                                    <input class="district" type="text">
+                                    <p class="mess-error error-district">Vui lòng nhập quận/huyện!</p>
+                                </div>
+                            </div>
+                            <div class="div-group-2">
+                                <div class="group-infor">
+                                    <label for="">Xã/Phường/Thị Trấn</label>
+                                    <input class="ward" type="text">
+                                    <p class="mess-error error-ward">Vui lòng nhập xã/phường/thị trấn!</p>
+                                </div>
+                                <div class="group-infor">
+                                    <label for="">Thôn/Ấp</label>
+                                    <input class="village" type="text">
+                                    <p class="mess-error error-village">Vui lòng nhập thôn/ấp!</p>
+                                </div>
+                            </div>
+                            <div class="group-infor">
+                                <label for="">Địa chỉ chi tiết</label>
+                                <input class="detailed" type="text">
+                                <p class="mess-error error-detailed">Vui lòng nhập địa chỉ chi tiết!</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="btn-container">
+                    <button class="cancel">Hủy</button>
+                    <button class="submit">Lưu</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal-change-pass">
+            <div class="modal-body-pass">
+                <span class=" close material-symbols-outlined">
+                    close
+                </span>
+                <div class="form-content">
+                    <div class="img-div">
+                        <img src="../../img/utils/lock.png" class="" /> 
+                    </div>
+                    <div class="content">
+                        <div class="title">
+                            <h4>ĐỔI MẬT KHẨU</h4>
+                        </div>
+                        <div class="group-infor">
+                            <label for="">Mật khẩu cũ</label>
+                            <input class="current-password" type="password">
+                            <p class="mess-error error-current-pass">Mật khẩu cũ không chính xác!</p>
+                        </div>
+                        <div class="group-infor">
+                            <label for="">Mật khẩu mới</label>
+                            <input class="new-password" type="password">
+                            <p class="mess-error error-new-pass">Mật khẩu cũ không chính xác!</p>
+                        </div>
+                        <div class="group-infor">
+                            <label for="">Nhập lại mật khẩu mới</label>
+                            <input class="confirm-password" type="password">
+                            <p class="mess-error error-confirm-pass">Mật khẩu cũ không chính xác!</p>
+                        </div>
+                        <div class="btn-container">
+                            <button class="cancel">Hủy</button>
+                            <button class="submit">Lưu</button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="../../js/user/page/personal-infor.js"></script>
+</body>
+</html>

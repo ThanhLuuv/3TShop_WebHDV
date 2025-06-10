@@ -1,0 +1,297 @@
+.personal-infor-container{
+    margin: 60px 10px 0px 10px;
+    height: 100vh;
+    font-family: Lexend Zetta;
+}
+
+.personal-infor-container .header-bg{
+    width: 100%;
+    height: 294px;
+    overflow: hidden;
+    position: relative;
+}
+
+.header-bg img{
+    width: 100%;
+}
+
+.header-bg .heading{
+    top: 212px;
+    color: #ffff;
+    position: absolute;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+.content-container .menu{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    margin-top: 18px;
+    gap: 60px;
+    justify-content: space-between;
+}
+
+.menu li{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 14px;
+    padding: 12px 0;
+    color: #825B32;
+    width: 25%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu .active{
+    border-bottom: 2px #825B32 solid;
+    background-color: #F9F9F9;
+}
+
+.content-container .order-list .order{
+    border-radius: 4px;
+    border: 2px #D9D9D9 solid;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.order+.order{
+    margin-top: 22px;
+}
+
+.order .item-list .item-container{
+    height: 460px;
+    border-top: 2px #D9D9D9 solid;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    margin: 20px 15px 0 15px;
+}
+
+.order .item-list .total-container{
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px #D9D9D9 solid;
+    margin: 0 15px;
+    padding: 12px 0;
+}
+
+.total-container div{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.total-container div label{
+    font-family: Lexend Giga;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 16px;
+    color: #000;
+}
+
+.total-container div p{
+    font-family: Lexend Giga;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    color: #825B32;
+}
+
+.order .item-list .item{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px #D9D9D9 solid;
+    list-style: none;
+    padding: 0 12px;
+    justify-content: space-between;
+    margin: 10px 15px;
+}
+
+.item li{
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #825B32;
+}
+.item li p{
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 16px;
+    color: #825B32;
+}
+.item li img{
+    width: 100px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item .product-detail .name{
+    color: #825B32;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+    margin-bottom: 4px;
+}
+
+.item .product-detail .color,
+.item .product-detail .size{
+    font-weight: 300;
+    line-height: 12px;
+    font-size: 12px;
+    color: #222831;
+    margin: 0;
+    margin-top: 6px;
+}
+
+.order .order-detail .order-container{
+    font-family: Lexend Exa;
+    background-color: #FAFAFA;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    height: fit-content;
+}
+
+.order-detail .order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px dotted #ccc;
+    position: relative;
+}
+
+.order-detail .dots {
+    position: absolute;
+    top: -15px;
+    width: 100%;
+    left: 0;
+    gap: 12px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.order-detail .dot {
+    width: 12px;
+    height: 12px;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+}
+
+.order-header .heading{
+    width: 100%;
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: left;
+    color: #8c6d1f;
+}
+
+.order-detail button{
+    margin-top: 20px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    outline: none;
+    background-color:#825B32;
+    font-family: Lexend Exa;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 14px;
+    color: #ffff;
+    border-radius: 4px;
+}
+
+.order-detail .order-header .order-id {
+    font-size: 16px;
+    color: #8c6d1f;
+}
+
+.order-detail h3 {
+    font-family: Lexend Exa;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 14px;
+    text-align: left;
+    color: #825B32;
+}
+
+.order-detail .customer-info {
+    padding: 10px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    margin-top: 10px;
+}
+
+.order-detail .info-row {
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    padding: 5px 0;
+}
+
+.order-detail .status{
+    display: flex !important;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+    justify-content: space-between;
+}
+
+.order-detail .label {
+    font-family: Lexend Exa;
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 14px;
+    text-align: left;
+    color: #825B32;
+}
+
+
+.order-detail .value {
+    font-family: Lexend Exa;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18.2px;
+    text-align: left;
+    color: #825B32;
+}
+
+.order-detail .info-row:not(:last-child) {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.cancel-order{
+    cursor: pointer;
+}
+
+.info-row .total-price{
+    font-size: 20px;
+}
+
+#cancel-reason{
+    height: 40px;
+    resize: none;
+    border-radius: 4px;
+    border: 1px #d3d3d3 solid;
+    outline: none;
+    padding: 4px;
+}
+.err-mess{
+    font-size: 10px !important;
+    color: #FF7878 !important;
+    opacity: 0;
+    margin: 0 !important;
+    text-align: left !important;
+}

@@ -1,0 +1,153 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Exa';
+    font-weight: 400;
+    color: #222831;
+    font-size: 12px;
+    user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none; 
+}
+.wrapper{
+    background-image: url(../../img/auth/background_login.jpg);
+    background-size: cover; /* Phủ kín toàn bộ nền */
+    background-position: center; /* Căn giữa ảnh nền */
+    background-repeat: no-repeat; /* Không lặp lại ảnh */
+    height: 100vh; /* Chiều cao toàn màn hình */
+    display: flex;
+    align-items:center;
+    justify-content:end
+}
+.content{
+    width: 36%;
+    background-color: #FFFFFF;
+    height: inherit;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+.logo_img{
+    height: 150px;
+    width: 150px;
+    margin-top: 40px;
+    margin-bottom: 32px;
+}
+.wellcome__title{
+    font-size: 32px;
+    font-weight: 700;
+}
+.login__form{
+    width: 70%;
+    margin-top: 20px;
+}
+.username__box, .password__box{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.password__box{
+    margin-top: 20px;
+    position: relative;
+}
+#username__status, #password__status{
+    display: none;
+    position: absolute;
+    bottom: -16px;
+    color: red;
+}
+.validate__noti{
+    display: none;
+    font-size: 10px;
+    font-weight: 300;
+}
+.toggle{
+    position: absolute;
+    right: 12px;
+    top: 32px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #825B32;
+}
+.toggle:hover{
+    opacity: 0.5;
+}
+.toggle__eye{
+    display: none;
+
+}
+.toggle__eye__slash{
+    display: none;
+}
+#username__input, #password__input{
+    width: 100%;
+    padding: 12px 8px;
+    border: none;
+    outline: none;
+    border-bottom: #d0d0d0 2px solid;
+}
+.label_input{
+font-size: 12px;
+font-weight: 400;
+}
+.__input{
+    font-size: 16px;
+    font-weight: 400;
+}
+.forgot__password__box{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    padding: 20px 0;
+}
+.forgot__password__box a{
+    color: #825B32;
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+}
+.action_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#login__btn{
+    width: 100%;
+    background-color: #A35705;
+    border-radius: 100px;
+    padding: 16px 0;
+    border: none;
+    cursor: pointer;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+#google__login__btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #F0F0F0;
+    border-radius: 100px;
+    padding: 4px 0;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+#google__login__btn img{
+    width: 40px;
+    height: 40px;
+}
+.btn__login{
+    font-size: 14px;
+}

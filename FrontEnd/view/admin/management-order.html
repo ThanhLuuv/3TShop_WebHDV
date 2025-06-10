@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/admin/management-order.css">
+    <link rel="stylesheet" href="../../css/admin/navigation.css">
+    <link rel="stylesheet" href="../../css/admin/spinner.css">
+    <link rel="stylesheet" href="../../css/admin/modal.css">
+    <link rel="stylesheet" href="../../css/admin/toast.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/footer-logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Exa:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+    <title>QUẢN LÝ ĐƠN HÀNG</title>
+</head>
+<body>
+    <div class="background">
+        <div class="navigation"></div>
+        <div class="wrapper">
+            <div id="toast-container" class="toast-container">
+              </div>
+            <div class="title__page__wrapper">
+                <h2>QUẢN LÝ ĐƠN HÀNG</h2>
+            </div>
+            <div class="order__status__wrapper">
+                <div class="order__status__outside">
+                    <div class="order__status" id="all__order">
+                        <h3>Tất cả</h3>
+                    </div>
+                    <div class="order__status" id="approving__order">
+                        <h3>Chờ xác nhận</h3>
+                    </div>
+                    <div class="order__status" id="delivering__order">
+                        <h3>Đang vận chuyển</h3>
+                    </div>
+                    <div class="order__status" id="completed__order">
+                        <h3>Đã hoàn thành</h3>
+                    </div>
+                    <div class="order__status" id="cancelled__order">
+                        <h3>Bị hủy</h3>
+                    </div>
+                </div>
+                <!-- <div class="shipment__wrapper">
+                    <label for="input__shipment">Phí giao hàng hiện tại</label>
+                    <input type="number" id="input__shipment" disabled>
+                    <span class="material-symbols-outlined" id="edit__shipment">
+                        edit
+                    </span>
+                    <span class="material-symbols-outlined" id="save__shipment" style="display: none;">
+                        save
+                    </span>
+                    <div class="cancel__edit__shipment__wrapper">
+                        <span class="material-symbols-outlined" id="cancel__edit__shipment">
+                            close
+                        </span>
+                    </div>
+                </div> -->
+            </div>
+            
+            <div class="body__wrapper">
+                <div class="is__empty__order__list" hidden>
+                    <img src="../../img/utils/out-of-stock.png" class="empty__order__list"  alt="Out of stock">
+                </div>
+                <div class="order__list__wrapper">
+                    <div class="title__page__wrapper">
+                        <h2>DANH SÁCH ĐƠN HÀNG</h2>
+                    </div>
+    
+                    <div class="order__total__and__search">
+                        <div class="order__total__wrapper">
+                            <h3>Tổng số đơn hàng</h3>
+                            <div class="number__of__order__wrapper">
+                                <h3 id="number__of__order">0</h3>
+                            </div>
+                        </div>
+                        <div class="search__wrapper">
+                            <span class="material-symbols-outlined search__icon">
+                                search
+                                </span>
+                            <input type="text" id="order__searching" placeholder="Tìm kiếm...">
+                        </div>
+                    </div>
+    
+                    <div class="filter__sort__wrapper">
+                        <div class="sort__wrapper">
+                            <span class="material-symbols-outlined" id="sort__icon">
+                                swap_vert
+                                </span>
+                            <select id="select__order__price">
+                                <option value="none">---------</option>
+                                <option value="newest">Mới nhất</option>
+                                <option value="oldest">Cũ nhất</option>
+                                <option value="price_esc">Giá tăng dần</option>
+                                <option value="price_desc">Giá giảm dần</option>
+                            </select>
+                        </div>
+                        <div class="filter__wrapper">
+                            <h3></h3>
+                            <input type="date" class="input__time" id="input__start__date">
+                            <h3 style="margin-left: 4px;">đến</h3>
+                            <input type="date" class="input__time" id="input__end__date">
+                            <button type="button" id="filter__button">Lọc</button>
+                        </div>
+                    </div>
+    
+                    <div class="order__list__table__wrapper">
+                        <!-- <div id="spinner__icon" class="loadingio-spinner-dual-ring-2by998twmg8">
+                            <div class="ldio-yzaezf3dcmj">
+                                <div></div>
+                                <div><div></div></div>
+                            </div>
+                        </div> -->
+                        <table id="table__list__order">
+                            <thead>
+                                <tr>
+                                    <th>Mã đơn hàng</th>
+                                    <th>Tên khách hàng</th>
+                                    <th>Thời gian đặt hàng</th>
+                                    <th>Giá trị đơn hàng</th>
+                                    <th id="status__th__col">Trạng thái</th>
+                                </tr>
+                            </thead>
+                            <tbody class="tbody__order__list">
+                                <!-- <tr class="each__order">
+                                    <td class="id__col">122789</td>
+                                    <td>Thanh Trường</td>
+                                    <td>10/11/2024 12:45:00</td>
+                                    <td>12.000.000</td>
+                                    <td>
+                                        <div class="order__status__wrapper">
+                                            <h3 class="order__status__col" id="canceled">Bị hủy</h3>
+                                        </div>
+                                    </td>
+                                </tr> -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="order__detail__wrapper">
+                    <div class="title__page__wrapper">
+                        <h2>CHI TIẾT ĐƠN HÀNG</h2>
+                    </div>
+                    <div class="order__detail__outside">
+                        <img src="../../img/utils/info-sign.png" alt="no information" id="placeholder__image">
+                        
+                        <!-- <div class="title__order__detail__wrapper">
+                            <h3 id="order__id__title">MÃ ĐƠN HÀNG</h3>
+                            <h3 id="order__id__content">334445</h3>
+                        </div>
+                        <div class="order__detail__body">
+                            <div class="order__information__wrapper">
+                                <div class="customer__name__title">
+                                    <h3>Khách hàng</h3>
+                                </div>
+                                <div class="customer__name__content">
+                                    <h3>Phạm Thanh Trường</h3>
+                                </div>
+                                <div class="customer__phone__title">
+                                    <h3>Số điện thoại</h3>
+                                </div>
+                                <div class="customer__phone__content">
+                                    <h3>0998876566</h3>
+                                </div>
+                                <div class="customer__address__title">
+                                    <h3>Địa chỉ</h3>
+                                </div>
+                                <div class="customer__address__content">
+                                    <h3>41/15, đường số 11, phường Trường Thọ, TP. Thủ Đức, TP.HCM</h3>
+                                </div>
+                                <div class="customer__time__title">
+                                    <h3>Thời gian đặt hàng</h3>
+                                </div>
+                                <div class="customer__time__content">
+                                    <h3>10/10/2024 13:30:00</h3>
+                                </div>
+                                <div class="customer__shipment__title">
+                                    <h3>Phí giao hàng</h3>
+                                </div>
+                                <div class="customer__shipment__content">
+                                    <h3>50.000đ</h3>
+                                </div>
+                                <div class="customer__note__title">
+                                    <h3>Ghi chú đơn hàng</h3>
+                                </div>
+                                <div class="customer__note__content">
+                                    <h3>Giao đúng mẫu nha shop Giao đúng mẫu nha shop Giao đúng mẫu nha shop</h3>
+                                </div>
+                                <div class="customer__total__title">
+                                    <h3>Tổng giá trị đơn hàng</h3>
+                                </div>
+                                <div class="customer__total__content">
+                                    <h3>1.000.000đ</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="ordered__product__list">
+                            <thead class="table__header__wrapper">
+                                <tr>
+                                    <th class="table__header">STT</th>
+                                    <th class="table__header">Sản phẩm</th>
+                                    <th class="table__header">Số lượng</th>
+                                    <th class="table__header">Giá</th>
+                                    <th class="table__header">Thành tiền</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="table__row">
+                                    <td>1</td>
+                                    <td>
+                                        <div class="product__information">
+                                            <img src="../../img/utils/product__order.png" class="product__image" alt="product">
+                                            <div class="product__specifications">
+                                                <h3 class ="product__name">Basic tea</h3>
+                                                <h3 class ="product__color">Màu sắc Xanh lá</h3>
+                                                <h3 class ="product__size">Size XXL</h3>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>x5</td>
+                                    <td>100.000đ</td>
+                                    <td>500.000đ</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>1</td>
+                                    <td>
+                                        <div class="product__information">
+                                            <img src="../../img/utils/product__order.png" class="product__image" alt="product">
+                                            <div class="product__specifications">
+                                                <h3 class ="product__name">Basic tea</h3>
+                                                <h3 class ="product__color">Màu sắc Xanh lá</h3>
+                                                <h3 class ="product__size">Size XXL</h3>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>x5</td>
+                                    <td>100.000đ</td>
+                                    <td>500.000đ</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>1</td>
+                                    <td>
+                                        <div class="product__information">
+                                            <img src="../../img/utils/product__order.png" class="product__image" alt="product">
+                                            <div class="product__specifications">
+                                                <h3 class ="product__name">Basic tea</h3>
+                                                <h3 class ="product__color">Màu sắc Xanh lá</h3>
+                                                <h3 class ="product__size">Size XXL</h3>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>x5</td>
+                                    <td>100.000đ</td>
+                                    <td>500.000đ</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>1</td>
+                                    <td>
+                                        <div class="product__information">
+                                            <img src="../../img/utils/product__order.png" class="product__image" alt="product">
+                                            <div class="product__specifications">
+                                                <h3 class ="product__name">Basic tea</h3>
+                                                <h3 class ="product__color">Màu sắc Xanh lá</h3>
+                                                <h3 class ="product__size">Size XXL</h3>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>x5</td>
+                                    <td>100.000đ</td>
+                                    <td>500.000đ</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>1</td>
+                                    <td>
+                                        <div class="product__information">
+                                            <img src="../../img/utils/product__order.png" class="product__image" alt="product">
+                                            <div class="product__specifications">
+                                                <h3 class ="product__name">Basic tea</h3>
+                                                <h3 class ="product__color">Màu sắc Xanh lá</h3>
+                                                <h3 class ="product__size">Size XXL</h3>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>x5</td>
+                                    <td>100.000đ</td>
+                                    <td>500.000đ</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>1</td>
+                                    <td>
+                                        <div class="product__information">
+                                            <img src="../../img/utils/product__order.png" class="product__image" alt="product">
+                                            <div class="product__specifications">
+                                                <h3 class ="product__name">Basic tea</h3>
+                                                <h3 class ="product__color">Màu sắc Xanh lá</h3>
+                                                <h3 class ="product__size">Size XXL</h3>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>x5</td>
+                                    <td>100.000đ</td>
+                                    <td>500.000đ</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>1</td>
+                                    <td>
+                                        <div class="product__information">
+                                            <img src="../../img/utils/product__order.png" class="product__image" alt="product">
+                                            <div class="product__specifications">
+                                                <h3 class ="product__name">Basic tea</h3>
+                                                <h3 class ="product__color">Màu sắc Xanh lá</h3>
+                                                <h3 class ="product__size">Size XXL</h3>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>x5</td>
+                                    <td>100.000đ</td>
+                                    <td>500.000đ</td>
+                                </tr><tr class="table__row">
+                                    <td>1</td>
+                                    <td>
+                                        <div class="product__information">
+                                            <img src="../../img/utils/product__order.png" class="product__image" alt="product">
+                                            <div class="product__specifications">
+                                                <h3 class ="product__name">Basic tea</h3>
+                                                <h3 class ="product__color">Màu sắc Xanh lá</h3>
+                                                <h3 class ="product__size">Size XXL</h3>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>x5</td>
+                                    <td>100.000đ</td>
+                                    <td>500.000đ</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>1</td>
+                                    <td>
+                                        <div class="product__information">
+                                            <img src="../../img/utils/product__order.png" class="product__image" alt="product">
+                                            <div class="product__specifications">
+                                                <h3 class ="product__name">Basic tea</h3>
+                                                <h3 class ="product__color">Màu sắc Xanh lá</h3>
+                                                <h3 class ="product__size">Size XXL</h3>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>x5</td>
+                                    <td>100.000đ</td>
+                                    <td>500.000đ</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>1</td>
+                                    <td>
+                                        <div class="product__information">
+                                            <img src="../../img/utils/product__order.png" class="product__image" alt="product">
+                                            <div class="product__specifications">
+                                                <h3 class ="product__name">Basic tea</h3>
+                                                <h3 class ="product__color">Màu sắc Xanh lá</h3>
+                                                <h3 class ="product__size">Size XXL</h3>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>x5</td>
+                                    <td>100.000đ</td>
+                                    <td>500.000đ</td>
+                                </tr>
+                                <tr class="table__row">
+                                    <td>1</td>
+                                    <td>
+                                        <div class="product__information">
+                                            <img src="../../img/utils/product__order.png" class="product__image" alt="product">
+                                            <div class="product__specifications">
+                                                <h3 class ="product__name">Basic tea</h3>
+                                                <h3 class ="product__color">Màu sắc Xanh lá</h3>
+                                                <h3 class ="product__size">Size XXL</h3>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>x5</td>
+                                    <td>100.000đ</td>
+                                    <td>500.000đ</td>
+                                </tr>
+                            </tbody>
+                        </table> -->
+                    </div>
+                    <div class="footer__show__information">
+                        <!-- ĐƠN HÀNG ĐANG CHỜ XÁC NHẬN -->
+                        <!-- <button type="button" id="cancel__order">Hủy đơn hàng</button>
+                        <button type="button" id="confirm__order">Xác nhận đơn hàng</button> -->
+    
+                        <!-- ĐƠN HÀNG ĐANG VẬN CHUYỂN -->
+                        <!-- <div class="datetime__about__order">
+                            <div class="datetime__title">
+                                <h3>Thời gian xác nhận đơn hàng</h3>
+                                <h3>Thời gian giao hàng dự kiến</h3>
+                            </div>
+                            <div class="datetime__detail">
+                                <h3>15/10   /2024 12:00:00</h3>
+                                <h3>10/10/2024 12:00:00</h3>
+                            </div>
+                        </div>
+                        <button type="button" id="complete__order">Hoàn thành đơn hàng</button> -->
+    
+                        <!-- ĐƠN HÀNG ĐÃ HOÀN THÀNH -->
+                        <!-- <div class="datetime__about__order">
+                            <div class="datetime__title">
+                                <h3>Thời gian xác nhận</h3>
+                                <h3>Thời gian giao hàng dự kiến</h3>
+                            </div>
+                            <div class="datetime__detail">
+                                <h3>10/10/2024 12:00:00</h3>
+                                <h3>15/10/2024 12:00:00</h3>
+                            </div>
+                        </div>
+                        <div class="complete__time__wrapper">
+                            <h3>Thời gian hoàn thành</h3>
+                            <h3 class="complete__time">15/10/2024 12:00:00</h3>
+                        </div> -->
+    
+                        <!-- ĐƠN HÀNG BỊ HỦY -->
+                        <!-- <div class="ordered__cancel__wrapper">
+                            <div class="datetime__related">
+                                <div class="time__wrapper">
+                                    <h3>Thời gian hủy đơn hàng</h3>
+                                    <h3 class="cancel__time">15/10/2024 12:00:00</h3>
+                                </div>
+                            </div>
+                            <div class="cancel__reason__wrapper">
+                                <h3>Lý do hủy đơn hàng</h3>
+                                <h3 class="cancel__content">
+                                    Khách hàng gọi điên nhờ hủy vì không còn muốn mua nữa nên là em mới nhấn hủy đơn chứ hông phải tự nhiên mà em hủy đâu
+                                </h3>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="confirm__order__background">
+            <!-- <div class="confirm__order__wrapper confirm__order__animation">
+                <div class="icon__close close__modal__confirm">
+                    <span class="material-symbols-outlined">
+                        close
+                        </span>
+                </div>
+                <div class="body__modal">
+                    <img src="../../img/utils/confirm__order.png" alt="Confirm order" class="confirm__order">
+                    <div class="title__wrapper">
+                        <h2 id="title__confirm__modal">XÁC NHẬN ĐƠN HÀNG</h2>
+                    </div>
+                    <div class="content__wrapper">
+                        <h3 class="content" id="content__confirm__modal">Bạn có chắc chắn xác nhận <br> đơn hàng 988776 không ?</h3>
+                    </div>
+                    <div class="button__wrapper">
+                        <button type="button" id="hidden__confirm__order__btn">Hủy</button>
+                        <button type="button" id="confirm__order__btn">Xác nhận</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <div class="cancel__order__background">
+            <!-- <div class="cancel__order__wrapper cancel__order__animation">
+                <div class="icon__close close__modal__cancel">
+                    <span class="material-symbols-outlined">
+                        close
+                        </span>
+                </div>
+                <div class="body__modal">
+                    <img src="../../img/utils/confirm__order.png" alt="Confirm order" class="confirm__order">
+                    <div class="title__wrapper">
+                        <h2 id="title__cancel__modal">XÁC NHẬN HỦY ĐƠN</h2>
+                    </div>
+                    <div class="content__wrapper">
+                        <label for="input__cancel__reason">Vui lòng cho biết lý do hủy đơn</label>
+                        <textarea type="text" id="input__cancel__reason"></textarea>
+                        <h3 id="validate__input__reason">Vui lòng nhập lý do hủy đơn</h3>
+                    </div>
+                    <div class="button__wrapper">
+                        <button type="button" id="hidden__cancel__order__btn">Hủy</button>
+                        <button type="button" id="cancel__order__btn">Xác nhận</button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <div class="loading__icon">
+            <img src="../../img/utils/ball_loading.svg" id="loading__image" alt="Loading">
+        </div>
+    </div>
+    <script type="module" src="../../js/admin/management-order.js"></script>
+    <script type="module" src="../../js/admin/navigation.js"></script>
+</body>
+</html>

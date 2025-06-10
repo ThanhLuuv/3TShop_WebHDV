@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lexend Exa';
+    font-size: 12px;
+    user-select: none;
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none; 
+}
+
+.navigation__bar {
+    background-color: #222831;
+    width: fit-content;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+    align-items: center;
+    position: fixed;
+    padding: 0 4px;
+    left: 0;
+    z-index: 1;
+}
+
+#logo__shop {
+    position: relative;
+    top: 16px;
+    height: 60px;
+    width: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+#staff__info > h4{
+    color: #FFFFFF;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+#staff__title {
+    font-weight: 200;
+}
+
+#staff__name {
+    font-weight: 500;
+}
+
+#function__bar {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.manage__items {
+    padding: 8px;
+    border-radius: 12px;
+    cursor: pointer;
+    
+}
+
+.wrapper__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.5 cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+
+.manage__items h5, .wrapper__item, .wrapper__item span:not(.logout__wrapper span), .manage__items span {
+    color: white;
+    font-weight: 400;
+}
+
+.manage__items.active, .manage__items.active .material-symbols-outlined, .manage__items.active h5 {
+    background-color: white;
+    color: #222831;
+}
+
+.wrapper__item.active, .wrapper__item.active .material-symbols-outlined, .wrapper__item.active h5 {
+    background-color: white;
+    color: #222831;
+}
+
+.manage__items.clicked {
+    scale: 0.95;
+}
+
+.logout__wrapper {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    bottom: 4px;
+    background-color: white;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.logout__wrapper > span {
+    color: #222831;
+    font-size: 20px;
+}
+
+.logout__wrapper > h5 {
+    color: #222831;
+}
+
+h5 {
+    font-size: 10px;
+    font-weight: 400;
+    text-wrap: nowrap;
+}
