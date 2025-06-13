@@ -64,30 +64,52 @@ public class DeleveryInformationService {
             String username = authentication.getName();
             Account account = accountRepository.findByUsername(username)
                 .orElseThrow(() -> new RuntimeException("Account not found"));
-            User user = userRepository.findByAccount(account)
-                .orElseThrow(() -> new RuntimeException("User not found"));
-            Delevery_Infomation delevery_Infomation = 
-                new Delevery_Infomation(delevery_InformationDTO.getName(), 
-                                        delevery_InformationDTO.getPhone(), 
-                                        delevery_InformationDTO.getAddress_line_1(), 
-                                        delevery_InformationDTO.getAddress_line_2(), 
+            
+            User user = userRepository.findByAccount(account).orElse(null);
+            
+            if (user == null) {
+                user = new User();
+                user.setAccount(account);
+                
+                user.setF_name(account.getUsername() != null ? account.getUsername() : ""); 
+                user.setL_name(""); 
+                user.setGender(false); 
+                user.setPhone(""); 
+                user.setEmail(account.getEmail() != null ? account.getEmail() : ""); 
+                user.setDate_of_birth("");
+                
+                user = userRepository.save(user);
+            }
+            
+            Delevery_Infomation delevery_Infomation =
+                new Delevery_Infomation(delevery_InformationDTO.getName(),
+                                        delevery_InformationDTO.getPhone(),
+                                        delevery_InformationDTO.getAddress_line_1(),
+                                        delevery_InformationDTO.getAddress_line_2(),
                                         delevery_InformationDTO.is_default(), new Date(), user);
+            
             if (delevery_InformationDTO.is_default()) {                
-                 Delevery_Infomation delevery_InfomationDefault = deleveryInformationRepository.findDefaultByUser(user);
+                Delevery_Infomation delevery_InfomationDefault = deleveryInformationRepository.findDefaultByUser(user);
                 if(delevery_InfomationDefault != null){
                     delevery_InfomationDefault.set_default(false);
                     deleveryInformationRepository.save(delevery_InfomationDefault);
                 }
+            }else{
+                Delevery_Infomation delevery_InfomationDefault = deleveryInformationRepository.findDefaultByUser(user);
+                if(delevery_InfomationDefault == null){
+                    delevery_Infomation.set_default(true);
+                }
             }
+            
             deleveryInformationRepository.save(delevery_Infomation);
             response.setStatus(200);
             response.setMessage("Create success");
-        }catch(RuntimeException e){
+            
+        } catch(RuntimeException e){
             response.setStatus(202);
             System.out.print("lỗi: " + e.getMessage());
             response.setMessage(e.getMessage());
-        } 
-        catch (Exception e) {
+        } catch (Exception e) {
             response.setStatus(500);
             response.setMessage("Error server");
         }
